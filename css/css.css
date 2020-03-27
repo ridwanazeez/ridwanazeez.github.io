@@ -1,11 +1,11 @@
 @font-face {
-  font-family: Raleway;
-  src: url(../fonts/Raleway-Bold.ttf);
+  font-family: 'Raleway', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 }
 
 @font-face {
-  font-family: Montserrat;
-  src: url(../fonts/Montserrat-Regular.ttf);
+  font-family: 'Montserrat', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 }
 
 html, body {
@@ -14,14 +14,6 @@ html, body {
 
 body {
   font-family: Montserrat, sans-serif;
-}
-
-.nav-bg {
-  background-color: rgba(12, 12, 12, 0.7) !important;
-}
-
-.nav-bg-dark {
-  background-color: rgb(12, 12, 12) !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
