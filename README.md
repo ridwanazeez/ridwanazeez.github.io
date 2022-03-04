@@ -1,13 +1,35 @@
 # ridwanazeez.github.io
 
-My personal website, redesigned from scratch.
+This template should help get you started developing with Vue 3 in Vite.
 
-### Built with:
-* [Bootstrap 4](https://getbootstrap.com/) 
-* [Font Awesome 5](https://fontawesome.com)
-* [Google Fonts](https://fonts.google.com)
-* [Parallax.js](http://pixelcog.github.io/parallax.js/)
+## Recommended IDE Setup
 
-### Stock images sourced from:
-* [Pexels](https://www.pexels.com)
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
 
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
