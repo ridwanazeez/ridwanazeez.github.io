@@ -9,6 +9,11 @@ const router = createRouter({
       name: "home",
       component: Home,
     },
+    {
+      path: "/gra-calculator",
+      name: "home",
+      component: GRACalculator,
+    },
     // {
     // path: "/about",
     // name: "about",

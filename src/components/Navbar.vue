@@ -12,13 +12,11 @@
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
-            <img class="block h-8 w-auto" src="../assets/my-logo.svg" alt="RA Logo" />
+            <router-link to="/"><img class="block h-8 w-auto" src="../assets/my-logo.svg" alt="RA Logo" /></router-link>
           </div>
           <div class="hidden sm:block sm:ml-6 absolute right-0">
             <div class="flex space-x-4">
-              <a v-for="item in navigation" :key="item.name" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">
-                <router-link to="{{item.href}}">{{ item.name }}</router-link>
-              </a>
+              <a v-for="item in navigation" :href="item.href" :key="item.name" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
               <Menu as="div">
                 <div>
                   <MenuButton class="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700">
@@ -46,9 +44,7 @@
     <!-- Mobile Menu -->
     <DisclosurePanel class="sm:hidden">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">
-          <router-link to="{{item.href}}">{{ item.name }}</router-link>
-        </DisclosureButton>
+        <DisclosureButton v-for="item in navigation" :href="item.href" :key="item.name" as="a" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
         <Menu as="div">
           <div>
             <MenuButton class="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700">
@@ -80,7 +76,7 @@ import { ChevronDownIcon } from "@heroicons/vue/solid";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  // { name: "About", href: "/about", current: false },
+  { name: "About", href: "/about", current: false },
   // { name: "Blog", href: "/blog", current: false },
 ];
 </script>
