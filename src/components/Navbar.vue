@@ -1,72 +1,86 @@
 <template>
-  <div class="bg-gray-100">
-    <nav class="container px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
-      <div class="flex items-center justify-between">
-        <router-link to="/">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1914.72 1482.31" class="w-20 h-20">
-            <g>
-              <polygon class="logo-stroke" points="1904.72 1106.09 1904.72 376.75 1273.09 12.09 641.47 376.75 641.47 1106.09 1273.09 1470.76 1904.72 1106.09" />
-              <polygon class="logo-stroke" points="1370.96 740.88 276.96 109.26 276.96 1372.51 1370.96 740.88" />
-              <polygon class="logo-stroke" points="1273.25 1105.55 1273.25 376.22 641.63 11.55 10 376.22 10 1105.55 641.63 1470.22 1273.25 1105.55" />
-              <path class="logo-text" d="M402.82,945.67,314.64,756.51H267.52V945H173.27V473.1H351c78.09,0,141.37,64,141.37,142a140.65,140.65,0,0,1-82.8,128.58l93.57,201.95ZM267.52,567.35v94.91H351a46.83,46.83,0,0,0,47.12-47.12c0-26.25-20.87-47.79-47.12-47.79Z" />
-              <path class="logo-text" d="M1681,858.16H1485.81l-44.43,87.51H1335.69L1576,473.78h27.6l222.82,471.89H1722.09Zm-44.42-94.25-49.14-105-53.19,105Z" />
-            </g>
-          </svg>
-        </router-link>
-        <!-- Mobile menu button -->
-        <div @click="toggleNav" class="flex md:hidden">
-          <button type="button" class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400">
-            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-              <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-            </svg>
-          </button>
+  <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <DisclosureButton class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <span class="sr-only">Open main menu</span>
+            <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
+            <XIcon v-else class="block h-6 w-6" aria-hidden="true" />
+          </DisclosureButton>
         </div>
-      </div>
-      <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-      <ul :class="showMenu ? 'flex' : 'hidden'" class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
-        <li class="text-gray-800 hover:text-blue-400 font-bold"><router-link to="/">Home</router-link></li>
-        <li class="text-gray-800 hover:text-blue-400 font-bold"><router-link to="/about">About</router-link></li>
-        <li>
-          <div>
-            <!-- Dropdown toggle button -->
-            <button @click="show = !show" class="flex items-center text-gray-800 bg-gray-100 rounded-md focus:outline-none">
-              <span class="mr-4 font-bold">Tools</span>
-              <svg class="w-5 h-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </button>
-            <!-- Dropdown menu -->
-            <div v-show="show" class="py-2 mt-2 bg-gray-200 rounded-md shadow-xl lg:absolute">
-              <router-link to="/gra-calculator" class="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-400 hover:text-gray-800">Motor Vehicle Import Tax Calculator</router-link>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            <img class="block h-8 w-auto" src="../assets/my-logo.svg" alt="RA Logo" />
+          </div>
+          <div class="hidden sm:block sm:ml-6 absolute right-0">
+            <div class="flex space-x-4">
+              <a v-for="item in navigation" :key="item.name" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">
+                <router-link to="{{item.href}}">{{ item.name }}</router-link>
+              </a>
+              <Menu as="div">
+                <div>
+                  <MenuButton class="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700">
+                    Tools
+                    <ChevronDownIcon class="mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                  </MenuButton>
+                </div>
+                <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
+                  <MenuItems class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1">
+                      <MenuItem v-slot="{ active }">
+                        <a :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
+                          <router-link to="/gra-calculator">Motor Vehicle Import Calculator</router-link>
+                        </a>
+                      </MenuItem>
+                    </div>
+                  </MenuItems>
+                </transition>
+              </Menu>
             </div>
           </div>
-        </li>
-        <li class="text-gray-800 hover:text-blue-400 font-bold"><router-link to="/blog">Blog</router-link></li>
-      </ul>
-    </nav>
-  </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <DisclosurePanel class="sm:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block px-3 py-2 rounded-md text-base font-medium']" :aria-current="item.current ? 'page' : undefined">
+          <router-link to="{{item.href}}">{{ item.name }}</router-link>
+        </DisclosureButton>
+        <Menu as="div">
+          <div>
+            <MenuButton class="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700">
+              Tools
+              <ChevronDownIcon class="mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+            </MenuButton>
+          </div>
+          <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
+            <MenuItems class="origin-top-right mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div class="py-1">
+                <MenuItem v-slot="{ active }">
+                  <a :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
+                    <router-link to="/gra-calculator">Motor Vehicle Import Calculator</router-link>
+                  </a>
+                </MenuItem>
+              </div>
+            </MenuItems>
+          </transition>
+        </Menu>
+      </div>
+    </DisclosurePanel>
+  </Disclosure>
 </template>
 
-<script>
-import { ref } from "vue";
-export default {
-  setup() {
-    let showMenu = ref(false);
-    let show = ref(false);
-    const toggleNav = () => (showMenu.value = !showMenu.value);
-    return { showMenu, show, toggleNav };
-  },
-};
-</script>
+<script setup>
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
+import { ChevronDownIcon } from "@heroicons/vue/solid";
 
-<style>
-.logo-stroke {
-  fill: none;
-  stroke: rgb(0, 0, 0);
-  stroke-miterlimit: 10;
-  stroke-width: 20px;
-}
-.logo-text {
-  fill: rgb(0, 0, 0);
-}
-</style>
+const navigation = [
+  { name: "Home", href: "/", current: true },
+  // { name: "About", href: "/about", current: false },
+  // { name: "Blog", href: "/blog", current: false },
+];
+</script>
