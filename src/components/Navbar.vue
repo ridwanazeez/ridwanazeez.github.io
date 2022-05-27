@@ -16,10 +16,10 @@
           </div>
           <div class="hidden sm:block sm:ml-6 absolute right-0">
             <div class="flex space-x-4">
-              <a v-for="item in navigation" :href="item.href" :key="item.name" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+              <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><router-link to="/">Home</router-link></a>
               <Menu as="div">
                 <div>
-                  <MenuButton class="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700">
+                  <MenuButton class="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                     Tools
                     <ChevronDownIcon class="mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                   </MenuButton>
@@ -28,8 +28,8 @@
                   <MenuItems class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div class="py-1">
                       <MenuItem v-slot="{ active }">
-                        <a :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
-                          <router-link to="/gra-calculator">Motor Vehicle Import Calculator</router-link>
+                        <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200">
+                          <router-link to="/gra-calculator">Vehicle Import Calculator</router-link>
                         </a>
                       </MenuItem>
                     </div>
@@ -73,10 +73,4 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
 import { ChevronDownIcon } from "@heroicons/vue/solid";
-
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "About", href: "/about", current: false },
-  // { name: "Blog", href: "/blog", current: false },
-];
 </script>
