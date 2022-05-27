@@ -4,7 +4,7 @@ import GRACalculator from "../views/GRACalculator.vue";
 import NotFound from "../views/404.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
