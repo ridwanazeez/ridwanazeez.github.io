@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import GRACalculator from "../views/GRACalculator.vue";
 import NotFound from "../views/404.vue";
