@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import GRACalculator from "../views/GRACalculator.vue";
+import NotFound from "../views/404.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,8 +13,13 @@ const router = createRouter({
     },
     {
       path: "/gra-calculator",
-      name: "home",
+      name: "GRACalculator",
       component: GRACalculator,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "NotFound",
+      component: NotFound,
     },
     // {
     // path: "/about",
