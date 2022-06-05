@@ -9,7 +9,7 @@
             <p class="mt-4 font-medium text-gray-500 text-center">
               Disclaimer: Trust the numbers here at your own risk. <br />
               ¯\_(ツ)_/¯ <br />
-              I don't work for GRA. <br />
+              I don't work at GRA. <br />
             </p>
             <p class="text-sm text-center">Numbers/formulas/rates/whatever are sourced from <a class="underline" href="https://www.gra.gov.gy/imports/motor-vehicle/">here</a></p>
             <div v-if="errors.length">
