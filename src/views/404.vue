@@ -1,4 +1,3 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <div class="flex items-center justify-center w-100 h-screen bg-gradient-to-b from-emerald-600 to-emerald-400">
     <div class="px-40 py-20 bg-white rounded-md shadow-xl">
