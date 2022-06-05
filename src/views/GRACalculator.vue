@@ -8,11 +8,13 @@
             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">GRA Motor Vehicle Import Duty Calculator</h2>
             <p class="mt-4 font-medium text-gray-500 text-center">
               Disclaimer: Trust the numbers here at your own risk. <br />
-              I don't work with GRA
+              ¯\_(ツ)_/¯ <br />
+              I don't work for GRA. <br />
             </p>
+            <p class="text-sm text-center">Numbers/formulas/rates/whatever are source from <a class="underline" href="https://www.gra.gov.gy/imports/motor-vehicle/">here</a></p>
             <div v-if="errors.length">
               <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error! Please fill in all the fields!</p>
-              <p v-for="error in errors">{{ error }}</p>
+              <p class="font-bold" v-for="error in errors">{{ error }}</p>
             </div>
           </div>
           <div class="mt-8 space-y-6">
@@ -22,7 +24,7 @@
             </div>
             <div>
               <label for="exchange-rate" class="block text-sm font-medium text-gray-700">Exchange Rate (GYD to USD)</label>
-              <input v-model="rate" type="number" name="exchange-rate" id="exchange-rate" placeholder="220" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              <input v-model="exchange_rate" type="number" name="exchange-rate" id="exchange-rate" placeholder="220" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
             </div>
             <div>
               <label for="vehicle-age" class="block text-sm font-medium text-gray-700">Age of Vehicle</label>
@@ -33,20 +35,38 @@
               </select>
             </div>
             <div>
-              <label for="cc" class="block text-sm font-medium text-gray-700">Engine CC</label>
-              <select v-model="cc" id="cc" name="cc" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                <option value="" disabled selected>Choose Engine CC</option>
-                <option value="1000">0cc - 1000cc</option>
-                <option value="1500">1001cc - 1500cc</option>
-                <option value="1800">1501cc - 1800cc</option>
-                <option value="2000">1801cc - 2000cc</option>
-                <option value="3000">2001cc - 3000cc</option>
-                <option value="4000">Over 3000cc</option>
+              <label for="fuel" class="block text-sm font-medium text-gray-700">Propulsion</label>
+              <select v-model="fuel" id="fuel" name="fuel" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                <option value="" disabled selected>Choose Propulsion Type</option>
+                <option value="Gasoline">Gasoline</option>
+                <option value="Electric">Electric</option>
+                <option value="Diesel">Diesel</option>
               </select>
             </div>
-            <div class="flex items-center">
-              <input v-model="ev" id="ev" name="ev" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
-              <label for="ev" class="ml-2 block text-gray-900">Electric?</label>
+            <div v-if="this.fuel != 'Electric'">
+              <div v-if="this.fuel == 'Gasoline'">
+                <label for="cc" class="block text-sm font-medium text-gray-700">Engine CC</label>
+                <select v-model="cc" id="cc" name="cc" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                  <option value="" disabled selected>Choose Engine CC</option>
+                  <option value="1000">0cc - 1000cc</option>
+                  <option value="1500">1001cc - 1500cc</option>
+                  <option value="1800">1501cc - 1800cc</option>
+                  <option value="2000">1801cc - 2000cc</option>
+                  <option value="3000">2001cc - 3000cc</option>
+                  <option value="4000">Over 3000cc</option>
+                </select>
+              </div>
+              <div v-if="this.fuel == 'Diesel'">
+                <label for="cc" class="block text-sm font-medium text-gray-700">Engine CC</label>
+                <select v-model="cc" id="cc" name="cc" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                  <option value="" disabled selected>Choose Engine CC</option>
+                  <option value="under1500">Under 1500cc</option>
+                  <option value="2000">1501cc - 2000cc</option>
+                  <option value="2500">2001cc - 2500cc</option>
+                  <option value="3000">2501cc - 3000cc</option>
+                  <option value="4000">Over 3000cc</option>
+                </select>
+              </div>
             </div>
             <div>
               <button
@@ -104,13 +124,13 @@ export default {
   data() {
     return {
       cif: "",
-      rate: "",
+      exchange_rate: "",
       age: "",
       cc: "",
-      ev: false,
+      fuel: "",
       cost: "",
       duty: "",
-      vat: "0.14",
+      vat: "",
       excise_tax: "",
       duty_due: "",
       excise_due: "",
@@ -131,21 +151,43 @@ export default {
   methods: {
     checkForm: function (e) {
       this.errors = [];
-      if (this.cif && this.rate && this.age && this.cc) {
-        this.show = !this.show;
-        return true;
-      }
-      if (!this.cif) {
-        this.errors.push("CIF required.");
-      }
-      if (!this.rate) {
-        this.errors.push("Exchange Rate required.");
-      }
-      if (!this.age) {
-        this.errors.push("Vehicle Age required.");
-      }
-      if (!this.cc) {
-        this.errors.push("Vehicle CC required.");
+      if (this.fuel != "Electric") {
+        if (this.cif && this.exchange_rate && this.age && this.cc && this.fuel) {
+          this.show = !this.show;
+          return true;
+        }
+        if (!this.cif) {
+          this.errors.push("CIF required.");
+        }
+        if (!this.exchange_rate) {
+          this.errors.push("Exchange Rate required.");
+        }
+        if (!this.age) {
+          this.errors.push("Vehicle Age required.");
+        }
+        if (!this.cc) {
+          this.errors.push("Vehicle CC required.");
+        }
+        if (!this.fuel) {
+          this.errors.push("Vehicle propulsion type required.");
+        }
+      } else {
+        if (this.cif && this.exchange_rate && this.age && this.fuel) {
+          this.show = !this.show;
+          return true;
+        }
+        if (!this.cif) {
+          this.errors.push("CIF required.");
+        }
+        if (!this.exchange_rate) {
+          this.errors.push("Exchange Rate required.");
+        }
+        if (!this.age) {
+          this.errors.push("Vehicle Age required.");
+        }
+        if (!this.fuel) {
+          this.errors.push("Vehicle propulsion type required.");
+        }
       }
       e.preventDefault();
     },
@@ -153,123 +195,179 @@ export default {
       this.cost = this.cif * this.rate;
     },
     calculateTax() {
-      switch (this.cc) {
-        case "1000":
+      switch (this.fuel) {
+        case "Gasoline":
           if (this.age == "under4") {
-            this.duty = 0.45; //45% duty
-            this.excise_tax = 0; //0% excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
+            switch (this.cc) {
+              case "1000":
+                this.duty = 0.45; //45% duty
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.vat_due = (this.cif + this.duty_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due;
+                break;
+              case "1500":
+                this.duty = 0.45; //45% duty
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.vat_due = (this.cif + this.duty_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due;
+                break;
+              case "1800":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 0.1; //10% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              case "2000":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 0.1; //10% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              case "3000":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 1.1; //110% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              case "4000":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 1.1; //110% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              default:
+                console.log("Error in Gasoline under 4 years CC block");
+            }
           } else {
-            this.duty = 0.1; //10% duty
-            this.excise_tax = 4200 * this.rate; //$4200 USD excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
+            switch (this.cc) {
+              case "1000":
+                this.excise_due = (this.cif + 4200) * 0.1 + 4200;
+                this.total_tax = this.excise_due;
+                break;
+              case "1500":
+                this.excise_due = (this.cif + 4300) * 0.1 + 4300;
+                this.total_tax = this.excise_due;
+                break;
+              case "1800":
+                this.excise_due = (this.cif + 6000) * 0.3 + 6000;
+                this.total_tax = this.excise_due;
+                break;
+              case "2000":
+                this.excise_due = (this.cif + 6500) * 0.3 + 6500;
+                this.total_tax = this.excise_due;
+                break;
+              case "3000":
+                this.excise_due = (this.cif + 13500) * 0.7 + 13500;
+                this.total_tax = this.excise_due;
+                break;
+              case "4000":
+                this.excise_due = (this.cif + 14500) * 1 + 14500;
+                this.total_tax = this.excise_due;
+                break;
+              default:
+                console.log("Error in Gasoline over 4 years CC block");
+            }
           }
           break;
-        case "1500":
+        case "Diesel":
           if (this.age == "under4") {
-            this.duty = 0.45; //45% duty
-            this.excise_tax = 0; //0% excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
+            switch (this.cc) {
+              case "under1500":
+                this.duty = 0.45; //45% duty
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.vat_due = (this.cif + this.duty_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due;
+                break;
+              case "1800":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 0.1; //10% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              case "2500":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 1.1; //110% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              case "3000":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 1.1; //110% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              case "4000":
+                this.duty = 0.45; //45% duty
+                this.excise_tax = 1.1; //110% excise tax
+                this.vat = 0.14; //14% VAT
+                this.duty_due = this.duty * this.cif;
+                this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                break;
+              default:
+                console.log("Error in Diesel under 4 years CC block");
+            }
           } else {
-            this.duty = 0.1; //10% duty
-            this.excise_tax = 4300 * this.rate; //$4300 USD excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
+            switch (this.cc) {
+              case "under1500":
+                this.excise_due = (this.cif + 6200) * 0.1 + 6200;
+                this.total_tax = this.excise_due;
+                break;
+              case "2000":
+                this.excise_due = (this.cif + 8200) * 0.3 + 8200;
+                this.total_tax = this.excise_due;
+                break;
+              case "2500":
+                this.excise_due = (this.cif + 15400) * 0.7 + 15400;
+                this.total_tax = this.excise_due;
+                break;
+              case "3000":
+                this.excise_due = (this.cif + 15500) * 0.7 + 15500;
+                this.total_tax = this.excise_due;
+                break;
+              case "4000":
+                this.excise_due = (this.cif + 17200) * 1 + 17200;
+                this.total_tax = this.excise_due;
+                break;
+              default:
+                console.log("Error in Diesel over 4 years CC block");
+            }
           }
           break;
-        case "1800":
+        case "Electric":
           if (this.age == "under4") {
-            this.duty = 0.45; //45% duty
-            this.excise_tax = 0.1; //10% excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
+            this.vat = 0.14; //14% VAT
+            this.vat_due = this.cif * this.vat;
+            this.total_tax = this.vat_due;
           } else {
-            this.duty = 0.3; //30% duty
-            this.excise_tax = 6000 * this.rate; //$6000 USD excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
           }
-          break;
-        case "2000":
-          if (this.age == "under4") {
-            this.duty = 0.45; //45% duty
-            this.excise_tax = 0.1; //10% excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
-          } else {
-            this.duty = 0.3; //30% duty
-            this.excise_tax = 6500 * this.rate; //$6500 USD excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
-          }
-          break;
-        case "3000":
-          if (this.age == "under4") {
-            this.duty = 0.45; //45% duty
-            this.excise_tax = 1.1; //110% excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
-          } else {
-            this.duty = 0.7; //30% duty
-            this.excise_tax = 13500 * this.rate; //$13500 USD excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
-          }
-          break;
-        case "4000":
-          if (this.age == "under4") {
-            this.duty = 0.45; //45% duty
-            this.excise_tax = 1.4; //140% excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
-          } else {
-            this.duty = 1.0; //100% duty
-            this.excise_tax = 14500 * this.rate; //$14500 USD excise tax
-            this.duty_due = this.cost * this.duty;
-            this.excise_due = (this.cost + this.duty_due) * this.excise_due;
-            this.vat_due = (this.cost + this.duty_due + this.excise_due) * this.vat;
-            this.total_tax = this.excise_due + this.duty_due + this.vat_due;
-            this.total_cost = this.cost + this.total_tax;
-          }
-          break;
         default:
-          console.log("Error!");
+          console.log("Error in fuel block");
       }
     },
   },
