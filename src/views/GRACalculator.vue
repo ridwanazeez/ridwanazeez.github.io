@@ -11,7 +11,7 @@
               ¯\_(ツ)_/¯ <br />
               I don't work for GRA. <br />
             </p>
-            <p class="text-sm text-center">Numbers/formulas/rates/whatever are source from <a class="underline" href="https://www.gra.gov.gy/imports/motor-vehicle/">here</a></p>
+            <p class="text-sm text-center">Numbers/formulas/rates/whatever are sourced from <a class="underline" href="https://www.gra.gov.gy/imports/motor-vehicle/">here</a></p>
             <div v-if="errors.length">
               <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error! Please fill in all the fields!</p>
               <p class="font-bold" v-for="error in errors">{{ error }}</p>
@@ -24,7 +24,7 @@
             </div>
             <div>
               <label for="exchange-rate" class="block text-sm font-medium text-gray-700">Exchange Rate (GYD to USD)</label>
-              <input v-model="exchange_rate" type="number" name="exchange-rate" id="exchange-rate" placeholder="220" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              <input v-model="exchange_rate" type="number" name="exchange-rate" id="exchange-rate" placeholder="209" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
             </div>
             <div>
               <label for="vehicle-age" class="block text-sm font-medium text-gray-700">Age of Vehicle</label>
@@ -100,10 +100,13 @@
               <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div class="sm:flex sm:items-start">
                   <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <DialogTitle as="h3" class="text-xl font-bold text-gray-900">Total</DialogTitle>
-                    <h4 class="pt-3 text-medium">Car Cost: {{ "$ " + cost + " " }}GYD</h4>
-                    <h4 class="pt-3 text-medium">Total Taxes: {{ "$ " + total_tax + " " }}GYD</h4>
-                    <h4 class="pt-5 text-lg text-bold">Total Car Cost: {{ "$ " + total_cost + " " }}GYD</h4>
+                    <DialogTitle as="h3" class="text-xl font-bold text-gray-900">Results</DialogTitle>
+                    <h4 class="pt-3 text-medium">Car Cost: {{ "$" + cost.toLocaleString() + " " }}GYD</h4>
+                    <h4 class="pt-3 text-medium">Excise Tax: {{ "$" + (excise_due * exchange_rate).toLocaleString() + " " }}GYD</h4>
+                    <h4 class="pt-3 text-medium">Duty: {{ "$" + (duty_due * exchange_rate).toLocaleString() + " " }}GYD</h4>
+                    <h4 class="pt-3 text-medium">VAT: {{ "$" + (vat_due * exchange_rate).toLocaleString() + " " }}GYD</h4>
+                    <h4 class="pt-3 text-medium">Total Taxes: {{ "$" + total_tax.toLocaleString() + " " }}GYD</h4>
+                    <h4 class="pt-3 text-lg text-bold">Total Car Cost: {{ "$" + total_cost.toLocaleString() + " " }}GYD</h4>
                   </div>
                 </div>
               </div>
@@ -151,7 +154,7 @@ export default {
   methods: {
     checkForm: function (e) {
       this.errors = [];
-      if (this.fuel != "Electric") {
+      if (this.fuel != "Electric" && this.fuel) {
         if (this.cif && this.exchange_rate && this.age && this.cc && this.fuel) {
           this.show = !this.show;
           return true;
@@ -192,7 +195,7 @@ export default {
       e.preventDefault();
     },
     calculateCost() {
-      this.cost = this.cif * this.rate;
+      this.cost = this.cif * this.exchange_rate;
     },
     calculateTax() {
       switch (this.fuel) {
@@ -204,14 +207,16 @@ export default {
                 this.vat = 0.14; //14% VAT
                 this.duty_due = this.duty * this.cif;
                 this.vat_due = (this.cif + this.duty_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due;
+                this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "1500":
                 this.duty = 0.45; //45% duty
                 this.vat = 0.14; //14% VAT
                 this.duty_due = this.duty * this.cif;
                 this.vat_due = (this.cif + this.duty_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due;
+                this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "1800":
                 this.duty = 0.45; //45% duty
@@ -220,7 +225,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "2000":
                 this.duty = 0.45; //45% duty
@@ -229,7 +235,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "3000":
                 this.duty = 0.45; //45% duty
@@ -238,7 +245,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "4000":
                 this.duty = 0.45; //45% duty
@@ -247,7 +255,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               default:
                 console.log("Error in Gasoline under 4 years CC block");
@@ -256,27 +265,33 @@ export default {
             switch (this.cc) {
               case "1000":
                 this.excise_due = (this.cif + 4200) * 0.1 + 4200;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "1500":
                 this.excise_due = (this.cif + 4300) * 0.1 + 4300;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "1800":
                 this.excise_due = (this.cif + 6000) * 0.3 + 6000;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "2000":
                 this.excise_due = (this.cif + 6500) * 0.3 + 6500;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "3000":
                 this.excise_due = (this.cif + 13500) * 0.7 + 13500;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "4000":
                 this.excise_due = (this.cif + 14500) * 1 + 14500;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               default:
                 console.log("Error in Gasoline over 4 years CC block");
@@ -291,7 +306,8 @@ export default {
                 this.vat = 0.14; //14% VAT
                 this.duty_due = this.duty * this.cif;
                 this.vat_due = (this.cif + this.duty_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due;
+                this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "1800":
                 this.duty = 0.45; //45% duty
@@ -300,7 +316,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "2500":
                 this.duty = 0.45; //45% duty
@@ -309,7 +326,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "3000":
                 this.duty = 0.45; //45% duty
@@ -318,7 +336,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "4000":
                 this.duty = 0.45; //45% duty
@@ -327,7 +346,8 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = this.duty_due + this.vat_due + this.excise_due;
+                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               default:
                 console.log("Error in Diesel under 4 years CC block");
@@ -336,23 +356,28 @@ export default {
             switch (this.cc) {
               case "under1500":
                 this.excise_due = (this.cif + 6200) * 0.1 + 6200;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "2000":
                 this.excise_due = (this.cif + 8200) * 0.3 + 8200;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "2500":
                 this.excise_due = (this.cif + 15400) * 0.7 + 15400;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "3000":
                 this.excise_due = (this.cif + 15500) * 0.7 + 15500;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               case "4000":
                 this.excise_due = (this.cif + 17200) * 1 + 17200;
-                this.total_tax = this.excise_due;
+                this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_cost = this.cost + this.total_tax;
                 break;
               default:
                 console.log("Error in Diesel over 4 years CC block");
@@ -363,8 +388,10 @@ export default {
           if (this.age == "under4") {
             this.vat = 0.14; //14% VAT
             this.vat_due = this.cif * this.vat;
-            this.total_tax = this.vat_due;
+            this.total_tax = Math.round(this.vat_due * this.exchange_rate);
+            this.total_cost = this.cost + this.total_tax;
           } else {
+            this.total_cost = this.cost;
           }
         default:
           console.log("Error in fuel block");
