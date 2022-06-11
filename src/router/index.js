@@ -10,16 +10,25 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: Home,
+      meta: {
+        title: "Ridwan Azeez",
+      },
     },
     {
       path: "/gra-calculator",
       name: "GRACalculator",
       component: GRACalculator,
+      meta: {
+        title: "Ridwan Azeez | Vehicle Duty Calculator",
+      },
     },
     {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: NotFound,
+      meta: {
+        title: "404",
+      },
     },
     // {
     // path: "/about",
@@ -30,6 +39,11 @@ const router = createRouter({
     //   component: () => import("../views/AboutView.vue"),
     // },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
 });
 
 export default router;
