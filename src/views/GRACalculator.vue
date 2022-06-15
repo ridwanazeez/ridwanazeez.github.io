@@ -243,40 +243,77 @@ export default {
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "1800":
-                this.duty = 0.45; //45% duty
-                this.excise_tax = 0.1; //10% excise tax
-                this.vat = 0.14; //14% VAT
-                this.duty_due = this.duty * this.cif;
-                this.excise_due = this.excise_tax * this.duty_due + this.cif;
-                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.vat_due = Math.round(this.vat_due);
-                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
-                this.total_tax = Math.round(this.total_tax);
-                this.total_cost = this.cost + this.total_tax;
+                if (this.pickup == "no") {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 0.1; //10% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else {
+                  this.duty = 0.45; //45% duty
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = 0;
+                  this.vat_due = (this.cif + this.duty_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                }
                 break;
               case "2000":
-                this.duty = 0.45; //45% duty
-                this.excise_tax = 0.1; //10% excise tax
-                this.vat = 0.14; //14% VAT
-                this.duty_due = this.duty * this.cif;
-                this.excise_due = this.excise_tax * this.duty_due + this.cif;
-                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.vat_due = Math.round(this.vat_due);
-                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
-                this.total_tax = Math.round(this.total_tax);
-                this.total_cost = this.cost + this.total_tax;
+                if (this.pickup == "no") {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 0.1; //10% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else {
+                  this.duty = 0.45; //45% duty
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = 0;
+                  this.vat_due = (this.cif + this.duty_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                }
                 break;
               case "3000":
-                this.duty = 0.45; //45% duty
-                this.excise_tax = 1.1; //110% excise tax
-                this.vat = 0.14; //14% VAT
-                this.duty_due = this.duty * this.cif;
-                this.excise_due = this.excise_tax * this.duty_due + this.cif;
-                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.vat_due = Math.round(this.vat_due);
-                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
-                this.total_tax = Math.round(this.total_tax);
-                this.total_cost = this.cost + this.total_tax;
+                if (this.pickup == "double cab") {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 0.75; //75% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 1.1; //110% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                }
                 break;
               case "4000":
                 this.duty = 0.45; //45% duty
