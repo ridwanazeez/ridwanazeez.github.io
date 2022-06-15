@@ -3,7 +3,7 @@
   <div class="h-full">
     <div class="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div class="shadow-xl rounded-xl">
-        <div class="bg-cover bg-center mx-auto w-auto [height:200px] rounded-t-xl" style="background-image: url(../src/assets/empty-wallet.jpg)" role="img" aria-label="Image of an empty wallet"></div>
+        <div class="bg-cover bg-center mx-auto w-auto [height:200px] rounded-t-xl" style="background-image: url(../assets/empty-wallet.jpg)" role="img" aria-label="Image of an empty wallet"></div>
         <div class="px-10 py-10">
           <form @submit.prevent="checkForm" class="max-w-md w-full space-y-8">
             <div>
