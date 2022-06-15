@@ -1,88 +1,106 @@
 <template>
-  <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-    <div class="shadow-xl rounded-xl">
-      <div class="px-10 py-10">
-        <form @submit.prevent="checkForm" class="max-w-md w-full space-y-8">
-          <div>
-            <img class="mx-auto h-16 w-auto" src="/gra-logo.jpg" alt="GRA Logo" />
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">GRA Motor Vehicle Import Duty Calculator</h2>
-            <p class="mt-4 font-medium text-gray-500 text-center">
-              Disclaimer: Trust the numbers here at your own risk. <br />
-              ¯\_(ツ)_/¯ <br />
-              I don't work at GRA. <br />
-            </p>
-            <p class="text-sm text-center">Numbers/formulas/rates/whatever are sourced from <a class="underline" href="https://www.gra.gov.gy/imports/motor-vehicle/">here</a></p>
-            <div v-if="errors.length">
-              <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error! Please fill in all the fields!</p>
-              <p class="font-bold" v-for="error in errors">{{ error }}</p>
-            </div>
-          </div>
-          <div class="mt-8 space-y-6">
+  <!-- Special thanks to Shashri for helping me rewrite the tagline. Also thank you to everyone who suggested improvements! -->
+  <div class="h-full">
+    <div class="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div class="shadow-xl rounded-xl">
+        <div class="bg-cover bg-center mx-auto w-auto [height:200px] rounded-t-xl" style="background-image: url(../src/assets/empty-wallet.jpg)" role="img" aria-label="Image of an empty wallet"></div>
+        <div class="px-10 py-10">
+          <form @submit.prevent="checkForm" class="max-w-md w-full space-y-8">
             <div>
-              <label for="cif" class="block text-sm font-medium text-gray-700">CIF (USD)</label>
-              <input v-model="cif" type="number" name="cif" id="cif" placeholder="12000" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              <!-- <img class="mx-auto w-auto [height:200px] pb-4" src="../assets/empty-wallet.jpg" alt="Image of an empty wallet" /> -->
+              <h2 class="text-center text-3xl font-extrabold text-gray-900">Motor Vehicle Import Duty Calculator</h2>
+              <p class="text-sm text-center">v1.1.0 | Last updated: 14/06/2022</p>
+              <p class="mt-4 font-medium text-gray-500 text-center">Disclaimer: This website is in no way affiliated with the Guyana Revenue Authority (GRA). It is an independent calculator which uses the <a href="https://www.gra.gov.gy/imports/motor-vehicle/" class="underline">formulas set out by the GRA.</a> <br /></p>
+              <div v-if="errors.length">
+                <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error! Please fill in all the fields!</p>
+                <p class="font-bold" v-for="error in errors">{{ error }}</p>
+              </div>
             </div>
-            <div>
-              <label for="exchange-rate" class="block text-sm font-medium text-gray-700">Exchange Rate (GYD to USD)</label>
-              <input v-model="exchange_rate" type="number" name="exchange-rate" id="exchange-rate" placeholder="209" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
-            </div>
-            <div>
-              <label for="vehicle-age" class="block text-sm font-medium text-gray-700">Age of Vehicle</label>
-              <select v-model="age" id="vehicle-age" name="vehicle-age" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                <option value="" disabled selected>Choose Vehicle Age</option>
-                <option value="under4">Under 4 Years</option>
-                <option value="over4">4 Years & Older</option>
-              </select>
-            </div>
-            <div>
-              <label for="fuel" class="block text-sm font-medium text-gray-700">Propulsion</label>
-              <select v-model="fuel" id="fuel" name="fuel" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                <option value="" disabled selected>Choose Propulsion Type</option>
-                <option value="Gasoline">Gasoline</option>
-                <option value="Electric">Electric</option>
-                <option value="Diesel">Diesel</option>
-              </select>
-            </div>
-            <div v-if="this.fuel != 'Electric'">
-              <div v-if="this.fuel == 'Gasoline'">
-                <label for="cc" class="block text-sm font-medium text-gray-700">Engine CC</label>
-                <select v-model="cc" id="cc" name="cc" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                  <option value="" disabled selected>Choose Engine CC</option>
-                  <option value="1000">0cc - 1000cc</option>
-                  <option value="1500">1001cc - 1500cc</option>
-                  <option value="1800">1501cc - 1800cc</option>
-                  <option value="2000">1801cc - 2000cc</option>
-                  <option value="3000">2001cc - 3000cc</option>
-                  <option value="4000">Over 3000cc</option>
-                </select>
+            <div class="mt-4 space-y-6">
+              <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="cif" class="block text-sm font-medium text-gray-700">CIF (USD)</label>
+                  <input v-model="cif" type="number" name="cif" id="cif" placeholder="12000" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="exchange-rate" class="block text-sm font-medium text-gray-700">Exchange Rate (GYD to USD)</label>
+                  <input v-model="exchange_rate" step=".1" type="number" name="exchange-rate" id="exchange-rate" placeholder="208.5" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                </div>
+              </div>
+              <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="vehicle-age" class="block text-sm font-medium text-gray-700">Age of Vehicle</label>
+                  <select v-model="age" id="vehicle-age" name="vehicle-age" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <option value="" disabled selected>Choose Vehicle Age</option>
+                    <option value="under4">Under 4 Years</option>
+                    <option value="over4">4 Years & Older</option>
+                  </select>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                  <label for="fuel" class="block text-sm font-medium text-gray-700">Propulsion</label>
+                  <select v-model="fuel" id="fuel" name="fuel" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <option value="" disabled selected>Choose Propulsion Type</option>
+                    <option value="Gasoline">Gasoline</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Diesel">Diesel</option>
+                  </select>
+                </div>
+              </div>
+              <div v-if="this.fuel != 'Electric'">
+                <div v-if="this.fuel == 'Gasoline'">
+                  <label for="cc" class="block text-sm font-medium text-gray-700">Engine CC</label>
+                  <select v-model="cc" id="cc" name="cc" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <option value="" disabled selected>Choose Engine CC</option>
+                    <option value="1000">0cc - 1000cc</option>
+                    <option value="1500">1001cc - 1500cc</option>
+                    <option value="1800">1501cc - 1800cc</option>
+                    <option value="2000">1801cc - 2000cc</option>
+                    <option value="3000">2001cc - 3000cc</option>
+                    <option value="4000">Over 3000cc</option>
+                  </select>
+                </div>
+                <div v-if="this.fuel == 'Diesel'">
+                  <label for="cc" class="block text-sm font-medium text-gray-700">Engine CC</label>
+                  <select v-model="cc" id="cc" name="cc" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <option value="" disabled selected>Choose Engine CC</option>
+                    <option value="under1500">Under 1500cc</option>
+                    <option value="2000">1501cc - 2000cc</option>
+                    <option value="2500">2001cc - 2500cc</option>
+                    <option value="3000">2501cc - 3000cc</option>
+                    <option value="4000">Over 3000cc</option>
+                  </select>
+                </div>
               </div>
               <div v-if="this.fuel == 'Diesel'">
-                <label for="cc" class="block text-sm font-medium text-gray-700">Engine CC</label>
-                <select v-model="cc" id="cc" name="cc" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                  <option value="" disabled selected>Choose Engine CC</option>
-                  <option value="under1500">Under 1500cc</option>
-                  <option value="2000">1501cc - 2000cc</option>
-                  <option value="2500">2001cc - 2500cc</option>
-                  <option value="3000">2501cc - 3000cc</option>
-                  <option value="4000">Over 3000cc</option>
+                <label for="pickup" class="block text-sm font-medium text-gray-700">Is this vehicle a Pickup?</label>
+                <select v-model="pickup" id="pickup" name="pickup" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                  <option value="" disabled selected>Choose option</option>
+                  <option value="no">No</option>
+                  <option value="single cab">Yes, Single Cab</option>
+                  <option value="double cab">Yes, Double Cab</option>
                 </select>
               </div>
+              <!-- got to research how the duty free works before i implement -->
+              <!-- <div class="flex items-center">
+                <input v-model="duty_free" id="duty-free" name="duty-free" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
+                <label for="duty-free" class="ml-2 block text-sm text-gray-700">Duty Free?</label>
+              </div> -->
+              <div>
+                <button
+                  type="submit"
+                  @click="
+                    checkForm;
+                    calculateCost();
+                    calculateTax();
+                  "
+                  class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+                >
+                  Calculate Duty
+                </button>
+              </div>
             </div>
-            <div>
-              <button
-                type="submit"
-                @click="
-                  checkForm;
-                  calculateCost();
-                  calculateTax();
-                "
-                class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
-              >
-                Calculate Duty
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -127,7 +145,7 @@ export default {
   data() {
     return {
       cif: "",
-      exchange_rate: "",
+      exchange_rate: "208.5",
       age: "",
       cc: "",
       fuel: "",
@@ -135,6 +153,8 @@ export default {
       duty: "",
       vat: "",
       excise_tax: "",
+      duty_free: "",
+      pickup: "",
       duty_due: "",
       excise_due: "",
       vat_due: "",
@@ -207,7 +227,9 @@ export default {
                 this.vat = 0.14; //14% VAT
                 this.duty_due = this.duty * this.cif;
                 this.vat_due = (this.cif + this.duty_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "1500":
@@ -215,7 +237,9 @@ export default {
                 this.vat = 0.14; //14% VAT
                 this.duty_due = this.duty * this.cif;
                 this.vat_due = (this.cif + this.duty_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "1800":
@@ -225,7 +249,9 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "2000":
@@ -235,7 +261,9 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "3000":
@@ -245,7 +273,9 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "4000":
@@ -255,7 +285,9 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               default:
@@ -266,31 +298,37 @@ export default {
               case "1000":
                 this.excise_due = (this.cif + 4200) * 0.1 + 4200;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "1500":
                 this.excise_due = (this.cif + 4300) * 0.1 + 4300;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "1800":
                 this.excise_due = (this.cif + 6000) * 0.3 + 6000;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "2000":
                 this.excise_due = (this.cif + 6500) * 0.3 + 6500;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "3000":
                 this.excise_due = (this.cif + 13500) * 0.7 + 13500;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "4000":
                 this.excise_due = (this.cif + 14500) * 1 + 14500;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               default:
@@ -306,38 +344,101 @@ export default {
                 this.vat = 0.14; //14% VAT
                 this.duty_due = this.duty * this.cif;
                 this.vat_due = (this.cif + this.duty_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
-              case "1800":
-                this.duty = 0.45; //45% duty
-                this.excise_tax = 0.1; //10% excise tax
-                this.vat = 0.14; //14% VAT
-                this.duty_due = this.duty * this.cif;
-                this.excise_due = this.excise_tax * this.duty_due + this.cif;
-                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
-                this.total_cost = this.cost + this.total_tax;
+              case "2000":
+                if (this.pickup != "no") {
+                  this.duty = 0.45; //45% duty
+                  this.vat = 0.14; //14% VAT
+                  this.excise_due = 0;
+                  this.duty_due = this.duty * this.cif;
+                  this.vat_due = (this.cif + this.duty_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 0.1; //10% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                }
                 break;
               case "2500":
-                this.duty = 0.45; //45% duty
-                this.excise_tax = 1.1; //110% excise tax
-                this.vat = 0.14; //14% VAT
-                this.duty_due = this.duty * this.cif;
-                this.excise_due = this.excise_tax * this.duty_due + this.cif;
-                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
-                this.total_cost = this.cost + this.total_tax;
+                if (this.pickup == "double cab") {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 0.75; //75% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else if (this.pickup == "single cab") {
+                  this.duty = 0.45; //45% duty
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = 0;
+                  this.vat_due = (this.cif + this.duty_due) * this.vat;
+                  this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 1.1; //110% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                }
                 break;
               case "3000":
-                this.duty = 0.45; //45% duty
-                this.excise_tax = 1.1; //110% excise tax
-                this.vat = 0.14; //14% VAT
-                this.duty_due = this.duty * this.cif;
-                this.excise_due = this.excise_tax * this.duty_due + this.cif;
-                this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
-                this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
-                this.total_cost = this.cost + this.total_tax;
+                if (this.pickup == "double cab") {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 0.75; //75% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else if (this.pickup == "single cab") {
+                  this.duty = 0.45; //45% duty
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = 0;
+                  this.vat_due = (this.cif + this.duty_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                } else {
+                  this.duty = 0.45; //45% duty
+                  this.excise_tax = 1.1; //110% excise tax
+                  this.vat = 0.14; //14% VAT
+                  this.duty_due = this.duty * this.cif;
+                  this.excise_due = this.excise_tax * this.duty_due + this.cif;
+                  this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                  this.vat_due = Math.round(this.vat_due);
+                  this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                  this.total_tax = Math.round(this.total_tax);
+                  this.total_cost = this.cost + this.total_tax;
+                }
                 break;
               case "4000":
                 this.duty = 0.45; //45% duty
@@ -346,7 +447,9 @@ export default {
                 this.duty_due = this.duty * this.cif;
                 this.excise_due = this.excise_tax * this.duty_due + this.cif;
                 this.vat_due = (this.cif + this.duty_due + this.excise_due) * this.vat;
+                this.vat_due = Math.round(this.vat_due);
                 this.total_tax = (this.duty_due + this.vat_due + this.excise_due) * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               default:
@@ -357,26 +460,31 @@ export default {
               case "under1500":
                 this.excise_due = (this.cif + 6200) * 0.1 + 6200;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "2000":
                 this.excise_due = (this.cif + 8200) * 0.3 + 8200;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "2500":
                 this.excise_due = (this.cif + 15400) * 0.7 + 15400;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "3000":
                 this.excise_due = (this.cif + 15500) * 0.7 + 15500;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               case "4000":
                 this.excise_due = (this.cif + 17200) * 1 + 17200;
                 this.total_tax = this.excise_due * this.exchange_rate;
+                this.total_tax = Math.round(this.total_tax);
                 this.total_cost = this.cost + this.total_tax;
                 break;
               default:
@@ -385,10 +493,14 @@ export default {
           }
           break;
         case "Electric":
+          this.excise_due = 0;
+          this.total_tax = 0;
           if (this.age == "under4") {
             this.vat = 0.14; //14% VAT
             this.vat_due = this.cif * this.vat;
-            this.total_tax = Math.round(this.vat_due * this.exchange_rate);
+            this.vat_due = Math.round(this.vat_due);
+            this.total_tax = this.vat_due * this.exchange_rate;
+            this.total_tax = Math.round(this.total_tax);
             this.total_cost = this.cost + this.total_tax;
           } else {
             this.total_cost = this.cost;
