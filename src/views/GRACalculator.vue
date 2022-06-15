@@ -3,11 +3,11 @@
   <div class="h-full">
     <div class="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div class="shadow-xl rounded-xl">
-        <div class="bg-cover bg-center mx-auto w-auto [height:200px] rounded-t-xl" style="background-image: url(../assets/empty-wallet.jpg)" role="img" aria-label="Image of an empty wallet"></div>
+        <div class="bg-cover bg-center mx-auto w-auto [height:200px] rounded-t-xl" style="background-image: url(/empty-wallet.jpg)" role="img" aria-label="Image of an empty wallet"></div>
         <div class="px-10 py-10">
           <form @submit.prevent="checkForm" class="max-w-md w-full space-y-8">
             <div>
-              <!-- <img class="mx-auto w-auto [height:200px] pb-4" src="../assets/empty-wallet.jpg" alt="Image of an empty wallet" /> -->
+              <!-- <img class="mx-auto w-auto [height:200px] pb-4" src="/empty-wallet.jpg" alt="Image of an empty wallet" /> -->
               <h2 class="text-center text-3xl font-extrabold text-gray-900">Motor Vehicle Import Duty Calculator</h2>
               <p class="text-sm text-center">v1.1.0 | Last updated: 14/06/2022</p>
               <p class="mt-4 font-medium text-gray-500 text-center">Disclaimer: This website is in no way affiliated with the Guyana Revenue Authority (GRA). It is an independent calculator which uses the <a href="https://www.gra.gov.gy/imports/motor-vehicle/" class="underline">formulas set out by the GRA.</a> <br /></p>
