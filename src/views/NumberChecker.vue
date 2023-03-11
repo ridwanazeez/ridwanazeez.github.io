@@ -2,17 +2,23 @@
     <div class="h-full">
         <div class="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div class="shadow-xl rounded-xl">
+                <a href="https://storyset.com/people" title="People illustrations by Storyset">
+                    <div class="bg-cover bg-center mx-auto w-auto [height:250px] rounded-t-xl"
+                        style="background-image: url(/people.svg)" role="img"
+                        aria-label="Illustration of people using their cellphones">
+                    </div>
+                </a>
                 <div class="px-10 py-10">
                     <form @submit.prevent="checkForm" class="max-w-md w-full space-y-8">
                         <div>
                             <h2 class="text-center text-3xl font-extrabold text-gray-900">Cell Number Checker</h2>
-                            <p class="text-sm text-center">v1.0.0 | Last updated: 07/03/2023</p>
+                            <p class="text-sm text-center">v1.0.0 | Last updated: 11/03/2023</p>
                             <p class="mt-4 font-medium text-gray-500 text-center">Disclaimer: I don't work for any of these
-                                telecommunications providers. The numbers are sourced from <a
+                                telecommunications providers. The cell numbers are sourced from <a
                                     href="https://www.gtt.co.gy/turn-on-4g-lte" class="underline">here.</a> While poking
                                 around on the website I noticed the numbers were stored in a JavaScript Array and the form
-                                was merely using a simple IF to check the number entered against those stored in the
-                                list.<br />
+                                was using a simple IF to check the number entered against those stored in the
+                                array.<br />
                             </p>
                             <div v-if="errors.length">
                                 <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error!</p>
@@ -24,14 +30,14 @@
                                 <div class="col-span-6 sm:col-span-3">
                                     <label for="number" class="block text-sm font-medium text-gray-700">Cell Number</label>
                                     <input v-model="number" type="number" name="number" id="number"
-                                        placeholder="Enter phone number"
+                                        placeholder="Enter cell phone number"
                                         class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                                 </div>
 
                             </div>
                             <div>
                                 <button type="submit" @click="checkNumber"
-                                    class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2">
+                                    class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2">
                                     Check Number
                                 </button>
                             </div>
@@ -86,7 +92,7 @@
 
 <script>
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from "@headlessui/vue";
-import json from "../assets/numbers.json";
+import numbers from "../assets/numbers.json";
 
 export default {
     data() {
@@ -96,7 +102,7 @@ export default {
             carrier: "",
             show: false,
             errors: [],
-            numbers: json,
+            numbers: numbers,
         };
     },
     components: {
@@ -112,6 +118,7 @@ export default {
             var i = 0;
             this.errors = [];
 
+            //convert number to string for manipulation
             this.number = this.number.toString();
 
             //Checks if first 3 numbers are equal to 592
@@ -119,40 +126,39 @@ export default {
 
             //if number starts with 592 (592-XXX-XXXX)
             if (areaCode == "592") {
+
+                //remove first 3 numbers of the phone number (for validation)
                 var num = this.number.slice(3, 10);
-                console.log("if:", this.validateNumber(num));
+
                 if (this.validateNumber(num)) {
-                    while (i !== this.numbers.length) {
-                        if (this.number === this.numbers[i].toString()) {
-                            this.carrier = "GTT";
-                        } else {
-                            this.carrier = "Digicel";
-                        }
-                        i++;
+                    if (this.numbers.includes(this.number)) {
+                        this.carrier = "GTT";
+                    } else {
+                        this.carrier = "Digicel";
                     }
                 }
+
             } else {
-                //add 592 to the front of the number if it doesn't already have it
+
+                //add 592 to the front of the number
                 this.newNumber = "592" + this.number;
-                console.log("else:", this.validateNumber(this.number));
+
                 if (this.validateNumber(this.number)) {
-                    while (i !== this.numbers.length) {
-                        if (this.newNumber === this.numbers[i].toString()) {
-                            this.carrier = "GTT";
-                        } else {
-                            this.carrier = "Digicel";
-                        }
-                        i++;
+                    if (this.numbers.includes(this.newNumber)) {
+                        this.carrier = "GTT";
+                    } else {
+                        this.carrier = "Digicel";
                     }
                 }
+
             }
 
-            console.log("carrier: ", this.carrier);
+            e.preventDefault();
 
         },
         validateNumber(number) {
-            console.log("validate num function:", number);
             if (number >= 6000000 && number <= 6999999) {
+                this.show = !this.show;
                 return true;
             }
             this.errors.push("Please enter valid cell number.");
@@ -166,6 +172,7 @@ export default {
             let formValues = [];
             formValues.push({
                 "Number": this.number,
+                "Carrier": this.carrier,
             });
             console.log("Form Data:", formValues);
         },
