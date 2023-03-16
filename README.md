@@ -1,35 +1,22 @@
-# ridwanazeez.github.io
+<p align="center">
+  <a href="https://ridwanazeez.github.io/">
+    <img alt="My Logo" src="./src/assets/my-logo.svg" width="100" />
+    <h2 align="center">Ridwan Azeez</h2>
+  </a>
+</p> 
 
-This template should help get you started developing with Vue 3 in Vite.
+<p align="center">This repo stores the code for my personal portfolio website.</p>
 
-## Recommended IDE Setup
+<p align="center">
+    <img alt="Website Build Status" src="https://img.shields.io/github/actions/workflow/status/ridwanazeez/ridwanazeez.github.io/deploy.yml?style=for-the-badge">
+    <img alt="Website Status" src="https://img.shields.io/website?down_message=offline&style=for-the-badge&up_message=online&url=https%3A%2F%2Fridwanazeez.github.io%2F">
+</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+## 🛠 Built With
+⚡ [VueJS v3](https://vuejs.org/) \
+⚡ [TailwindCSS](https://tailwindcss.com/) \
+⚡ [Heroicons (included with Vue)](https://heroicons.com/) \
+⚡ [VueUse](https://vueuse.org/)
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+---
+Made with ♥ from Georgetown, Guyana ✈
