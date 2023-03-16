@@ -12,11 +12,15 @@
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
-            <a href="#" @click="toggleDark()"><img class="block h-8 w-auto" src="../assets/my-logo.svg" alt="RA Logo" /></a>
+            <router-link to="/"><img class="block h-8 w-auto" src="../assets/my-logo.svg" alt="RA Logo" /></router-link>
           </div>
           <div class="hidden sm:block sm:ml-6 absolute right-0">
             <div class="flex space-x-4">
               <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"><router-link to="/">Home</router-link></a>
+              <button @click="toggleDark()" class="text-gray-300 hover:bg-gray-700 hover:text-white px-2 rounded-md">
+                <MoonIcon v-if="isDark" class="h-5"></MoonIcon>
+                <SunIcon v-else class="h-5"></SunIcon>
+              </button>
               <Menu as="div">
                 <div>
                   <MenuButton class="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
@@ -88,6 +92,7 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
+import { MoonIcon, SunIcon } from "@heroicons/vue/outline/";
 import { ChevronDownIcon } from "@heroicons/vue/solid";
 import { useDark, useToggle } from "@vueuse/core";
 
