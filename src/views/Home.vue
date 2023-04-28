@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-  <section id="hero" class="flex h-screen bg-gray-200">
+  <section id="hero" class="flex h-screen bg-blue-50">
     <div class="px-6 lg:px-8 m-auto">
       <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
@@ -24,51 +24,56 @@ export default {
   <section id="about-me" class="flex h-screen">
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-        <img class="object-cover object-center rounded" alt="image of me" src="../../public/empty-wallet.jpg" />
+        <img class="object-cover object-center rounded-full duration-300 hover:scale-105" alt="image of me" src="/me.jpg" />
       </div>
       <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-gray-900">About Me</h1>
-        <p class="mb-8 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, aliquam.</p>
+        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-blue-600">About Me</h1>
+        <p class="mb-8 leading-relaxed">
+          I'm a Software Developer with a development background primarily focused on Web Application Development using Web & JavaScript Frameworks & Libraries like <a class="text-blue-600 underline" href="https://angular.io/">Angular</a>, <a class="text-blue-600 underline" href="https://getbootstrap.com/">Bootstrap</a>, <a class="text-blue-600 underline" href="https://tailwindcss.com/">Tailwind CSS</a>, <a class="text-blue-600 underline" href="https://vuejs.org/">VueJS</a> and
+          <a class="text-blue-600 underline" href="https://laravel.com/">Laravel</a>.
+        </p>
+        <p class="mb-8 leading-relaxed">I also have experience in Graphic Design, having worked as a freelance designer for a few years before joining a marketing agency that provided me the opportunity to work with numerous local companies to create content for their social media pages.</p>
+        <a href="https://www.behance.net/ridwanazeez" class="mb-8 leading-relaxed text-sm text-gray-400">...and I make art sometimes</a>
       </div>
     </div>
   </section>
-  <section id="projects" class="flex h-screen bg-gray-200">
-    <div class="container px-5 py-24 mx-auto">
+  <section id="projects" class="flex h-screen bg-blue-50">
+    <div class="container px-5 py-24 m-auto">
       <div class="flex flex-col text-center w-full mb-10">
-        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-gray-900">Projects</h1>
+        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-blue-600">Projects</h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Here's some stuff I've worked on</p>
       </div>
-      <div class="grid sm:grid-cols-1 md:grid-cols-3 justify-items-center gap-10 m-4">
-        <a class="p-4 shadow-2xl bg-white rounded-3xl w-[90%]" href="/gra-calculator">
-          <div class="h-full items-center text-center">
-            <img alt="team" class="flex-shrink-0 rounded-2xl w-full aspect-square object-cover object-center mb-4" src="../../public/empty-wallet.jpg" />
-            <div class="w-full">
-              <h2 class="font-medium text-lg text-gray-900">Motor Vehicle Import Duty Calculator</h2>
-              <h3 class="text-gray-500 mb-3">VueJS, Tailwind CSS</h3>
-              <p class="mb-4">I rebuilt my own personal calculator and made it publicly available, for free!</p>
-              <p class="text-sm font-semibold leading-6 text-blue-600 dark:text-white">Visit <span aria-hidden="true">→</span></p>
+      <div class="grid xs:grid-cols-2 lg:grid-cols-5 justify-items-center gap-4">
+        <a href="/gra-calculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
+          <img class="object-cover object-center aspect-square" src="/empty-wallet.jpg" alt="empty wallet" />
+          <div class="p-4">
+            <h2 class="font-medium text-lg text-gray-900">Motor Vehicle Import Duty Calculator</h2>
+            <h3 class="text-gray-500 mb-2">VueJS, Tailwind CSS</h3>
+            <div class="flex items-center">
+              <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
+              <p class="ml-auto text-base font-medium text-blue-500">Visit <span aria-hidden="true">→</span></p>
             </div>
           </div>
         </a>
-        <a class="p-4 shadow-2xl bg-white rounded-3xl w-[90%]" href="/gra-calculator">
-          <div class="h-full items-center text-center">
-            <img alt="team" class="flex-shrink-0 rounded-2xl w-full aspect-square object-cover object-center mb-4" src="../../public/empty-wallet.jpg" />
-            <div class="w-full">
-              <h2 class="font-medium text-lg text-gray-900">Motor Vehicle Import Duty Calculator</h2>
-              <h3 class="text-gray-500 mb-3">VueJS, Tailwind CSS</h3>
-              <p class="mb-4">I rebuilt my own personal calculator and made it publicly available, for free!</p>
-              <p class="text-sm font-semibold leading-6 text-blue-600 dark:text-white">Visit <span aria-hidden="true">→</span></p>
+        <a href="https://amcham.gy/" class="mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
+          <img class="object-cover object-center aspect-square" src="/amcham.jpg" alt="image of AmCham stage" />
+          <div class="p-4">
+            <h2 class="font-medium text-lg text-gray-900">AmCham Guyana Website</h2>
+            <h3 class="text-gray-500 mb-2">Wordpress</h3>
+            <div class="flex items-center">
+              <p class="mr-2 text-sm text-gray-500 dark:text-white">2020 • Company Client</p>
+              <p class="ml-auto text-base font-medium text-blue-500">Visit <span aria-hidden="true">→</span></p>
             </div>
           </div>
         </a>
-        <a class="p-4 shadow-2xl bg-white rounded-3xl w-[90%]" href="/gra-calculator">
-          <div class="h-full items-center text-center">
-            <img alt="team" class="flex-shrink-0 rounded-2xl w-full aspect-square object-cover object-center mb-4" src="../../public/empty-wallet.jpg" />
-            <div class="w-full">
-              <h2 class="font-medium text-lg text-gray-900">Motor Vehicle Import Duty Calculator</h2>
-              <h3 class="text-gray-500 mb-3">VueJS, Tailwind CSS</h3>
-              <p class="mb-4">I rebuilt my own personal calculator and made it publicly available, for free!</p>
-              <p class="text-sm font-semibold leading-6 text-blue-600 dark:text-white">Visit <span aria-hidden="true">→</span></p>
+        <a href="#" class="mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
+          <img class="object-cover object-center aspect-square" src="https://picsum.photos/500" alt="" />
+          <div class="p-4">
+            <h2 class="font-medium text-lg text-gray-900">More Coming Soon</h2>
+            <h3 class="text-gray-500 mb-2">...</h3>
+            <div class="flex items-center">
+              <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
+              <p class="ml-auto text-base font-medium text-blue-500">Visit <span aria-hidden="true">→</span></p>
             </div>
           </div>
         </a>
