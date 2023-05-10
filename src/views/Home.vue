@@ -3,6 +3,11 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    scrollTo(refName) {
+      this.$refs[refName].scrollIntoView({ behavior: "smooth" });
+    },
+  },
 };
 </script>
 
@@ -14,14 +19,14 @@ export default {
           <h1 class="text-4xl font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-sky-500 to-indigo-500 inline-block text-transparent bg-clip-text pb-5">Hello, my name is Ridwan</h1>
           <p class="text-lg leading-8 text-gray-600 dark:text-white">Software Engineer | Graphic Designer</p>
           <div class="mt-5 flex items-center justify-center gap-x-6">
-            <a href="/contact" class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Contact Me (pls don't)</a>
-            <a href="/projects" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Check out my projects <span aria-hidden="true">→</span></a>
+            <a class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Contact Me (pls don't)</a>
+            <button @click="scrollTo('projects')" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">Check out my projects <span aria-hidden="true">→</span></button>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="about-me" class="flex h-screen">
+  <section ref="about-me" class="flex h-screen">
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
         <img class="object-cover object-center rounded-full duration-300 hover:scale-105" alt="image of me" src="/me.jpg" />
@@ -37,14 +42,14 @@ export default {
       </div>
     </div>
   </section>
-  <section id="projects" class="flex h-screen bg-blue-50">
+  <section ref="projects" class="flex h-screen bg-blue-50">
     <div class="container px-5 py-24 m-auto">
       <div class="flex flex-col text-center w-full mb-10">
         <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-blue-600">Projects</h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Here's some stuff I've worked on</p>
       </div>
       <div class="grid xs:grid-cols-2 lg:grid-cols-5 justify-items-center gap-4">
-        <a href="/gra-calculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
+        <router-link to="/gra-caulculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
           <img class="object-cover object-center aspect-square" src="/empty-wallet.jpg" alt="empty wallet" />
           <div class="p-4">
             <h2 class="font-medium text-lg text-gray-900">Motor Vehicle Import Duty Calculator</h2>
@@ -54,7 +59,7 @@ export default {
               <p class="ml-auto text-base font-medium text-blue-500">Visit <span aria-hidden="true">→</span></p>
             </div>
           </div>
-        </a>
+        </router-link>
         <a href="https://amcham.gy/" class="mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
           <img class="object-cover object-center aspect-square" src="/amcham.jpg" alt="image of AmCham stage" />
           <div class="p-4">
