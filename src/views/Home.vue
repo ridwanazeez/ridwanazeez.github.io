@@ -49,7 +49,7 @@ export default {
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Here's some stuff I've worked on</p>
       </div>
       <div class="grid xs:grid-cols-2 lg:grid-cols-5 justify-items-center gap-4">
-        <router-link to="/gra-caulculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
+        <router-link to="/gra-calculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
           <img class="object-cover object-center aspect-square" src="/empty-wallet.jpg" alt="empty wallet" />
           <div class="p-4">
             <h2 class="font-medium text-lg text-gray-900">Motor Vehicle Import Duty Calculator</h2>
