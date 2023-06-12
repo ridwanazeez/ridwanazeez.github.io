@@ -11,12 +11,12 @@
               <p class="text-sm text-center dark:text-white">
                 v1.2.1 | Last updated: 11/06/2023 | Click
                 <a href="https://ridwanazeez.notion.site/Motor-Vehicle-Import-Duty-Calculator-update-notes-dbcbf1d2de55487cbaaf4daa707cc443" class="underline">here</a>
-                to see what's new!
+                to see what's new
               </p>
               <p class="mt-4 font-medium text-gray-500 dark:text-white text-center">Disclaimer: This website is in no way affiliated with the Guyana Revenue Authority (GRA). It is an independent calculator which uses <a href="https://www.gra.gov.gy/imports/motor-vehicle/" class="underline">publicly available formulas</a> <br /></p>
               <div v-if="errors.length">
                 <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error! Please fill in all the fields!</p>
-                <p class="font-bold" v-for="error in errors">{{ error }}</p>
+                <p class="font-bold dark:text-white" v-for="error in errors">{{ error }}</p>
               </div>
             </div>
             <div class="mt-4 space-y-6">
