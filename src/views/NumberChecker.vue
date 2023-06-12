@@ -1,30 +1,30 @@
 <template>
   <div class="h-full">
     <div class="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div class="shadow-xl rounded-xl">
+      <div class="shadow-xl rounded-xl dark:shadow-lg dark:shadow-blue-700">
         <a href="https://storyset.com/people" title="People illustrations by Storyset">
           <div class="bg-cover bg-center mx-auto w-auto [height:250px] rounded-t-xl" style="background-image: url(/people.svg)" role="img" aria-label="Illustration of people using their cellphones"></div>
         </a>
         <div class="px-10 py-10">
           <form @submit.prevent="checkForm" class="max-w-md w-full space-y-8">
             <div>
-              <h2 class="text-center text-3xl font-extrabold text-gray-900">Cell Number Checker</h2>
-              <p class="text-sm text-center">v1.1.0 | Last updated: 10/05/2023</p>
-              <p class="mt-4 font-medium text-gray-500 text-center">Disclaimer: I don't work for any of the telecommunications providers mentioned in this app</p>
+              <h2 class="text-center text-3xl font-extrabold text-gray-900 dark:text-white">Cell Number Checker</h2>
+              <p class="text-sm text-center dark:text-white">v1.1.1 | Last updated: 11/06/2023</p>
+              <p class="mt-4 font-medium text-gray-500text-center dark:text-white">Disclaimer: I don't work for any of the telecommunications providers mentioned in this app</p>
               <div v-if="errors.length">
                 <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error!</p>
-                <p class="font-bold" v-for="error in errors">{{ error }}</p>
+                <p class="font-bold dark:text-white" v-for="error in errors">{{ error }}</p>
               </div>
             </div>
             <div class="mt-4 space-y-6">
               <div class="grid gap-6">
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="number" class="block text-sm font-medium text-gray-700">Cell Number</label>
+                  <label for="number" class="block text-sm font-medium text-gray-700 dark:text-white">Cell Number</label>
                   <input v-model="number" type="number" name="number" id="number" placeholder="Enter cell phone number" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                 </div>
               </div>
               <div>
-                <button type="submit" @click="checkNumber" class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2">Check Number</button>
+                <button type="submit" @click="checkNumber" class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 dark:text-white dark:bg-blue-500 dark:hover:bg-blue-700">Check Number</button>
               </div>
             </div>
           </form>
@@ -146,27 +146,27 @@ export default {
     // 7100000 to 7119999 | ENet
     // 8880000 to 8889999 | GTT
     checkCarrier(number) {
-      if (number >= 6000000 && number <= 6089999) {
+      if (number >= "6000000" && number <= "6089999") {
         this.carrier = "Digicel";
-      } else if (number >= 6090000 && number <= 62999990) {
+      } else if (number >= "6090000" && number <= "6299999") {
         this.carrier = "GTT";
-      } else if (number >= 6300000 && number <= 6349999) {
+      } else if (number >= "6300000" && number <= "6349999") {
         this.carrier = "Digicel";
-      } else if (number >= 6350000 && number <= 6359999) {
+      } else if (number >= "6350000" && number <= "6359999") {
         this.carrier = "ENet";
-      } else if (number >= 6360000 && number <= 6379999) {
+      } else if (number >= "6360000" && number <= "6379999") {
         this.carrier = "Digicel";
-      } else if (number >= 6380000 && number <= 6589999) {
+      } else if (number >= "6380000" && number <= "6589999") {
         this.carrier = "GTT";
-      } else if (number >= 6590000 && number <= 6999999) {
+      } else if (number >= "6590000" && number <= "6999999") {
         this.carrier = "Digicel";
-      } else if (number >= 7010000 && number <= 7019999) {
+      } else if (number >= "7010000" && number <= "7019999") {
         this.carrier = "Digicel";
-      } else if (number >= 7060000 && number <= 7079999) {
+      } else if (number >= "7060000" && number <= "7079999") {
         this.carrier = "GTT";
-      } else if (number >= 7100000 && number <= 7119999) {
+      } else if (number >= "7100000" && number <= "7119999") {
         this.carrier = "ENet";
-      } else if (number >= 8880000 && number <= 8889999) {
+      } else if (number >= "8880000" && number <= "8889999") {
         this.carrier = "GTT";
       } else {
         this.carrier = "GTT";
