@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <section id="hero" class="flex h-screen bg-blue-50">
+  <section id="hero" class="flex h-screen bg-blue-50 dark:bg-gray-900">
     <div class="px-6 lg:px-8 m-auto">
       <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
@@ -33,37 +33,26 @@ export default {
       </div>
       <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
         <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-blue-600">About Me</h1>
-        <p class="mb-8 leading-relaxed">
+        <p class="mb-8 leading-relaxed dark:text-white">
           I'm a Software Developer with a development background primarily focused on Web Application Development using Web & JavaScript Frameworks & Libraries like <a class="text-blue-600 underline" href="https://angular.io/">Angular</a>, <a class="text-blue-600 underline" href="https://getbootstrap.com/">Bootstrap</a>, <a class="text-blue-600 underline" href="https://tailwindcss.com/">Tailwind CSS</a>, <a class="text-blue-600 underline" href="https://vuejs.org/">VueJS</a> and
           <a class="text-blue-600 underline" href="https://laravel.com/">Laravel</a>.
         </p>
-        <p class="mb-8 leading-relaxed">I also have experience in Graphic Design, having worked as a freelance designer for a few years before joining a marketing agency that provided me the opportunity to work with numerous local companies to create content for their social media pages.</p>
+        <p class="mb-8 leading-relaxed dark:text-white">I also have experience in Graphic Design, having worked as a freelance designer for a few years before joining a marketing agency that provided me the opportunity to work with numerous local companies to create content for their social media pages.</p>
         <a href="https://www.behance.net/ridwanazeez" class="mb-8 leading-relaxed text-sm text-gray-400">...and I make art sometimes</a>
       </div>
     </div>
   </section>
-  <section ref="projects" class="flex h-screen bg-blue-50">
+  <section ref="projects" class="flex h-screen bg-blue-50 dark:bg-gray-900">
     <div class="container px-5 py-24 m-auto">
       <div class="flex flex-col text-center w-full mb-10">
         <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-blue-600">Projects</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Here's some stuff I've worked on</p>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base dark:text-white">Here's some stuff I've worked on</p>
       </div>
       <div class="grid xs:grid-cols-2 lg:grid-cols-5 justify-items-center gap-4">
-        <router-link to="/gra-calculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
-          <img class="object-cover object-center aspect-square" src="/empty-wallet.jpg" alt="empty wallet" />
-          <div class="p-4">
-            <h2 class="font-medium text-lg text-gray-900">Motor Vehicle Import Duty Calculator</h2>
-            <h3 class="text-gray-500 mb-2">VueJS, Tailwind CSS</h3>
-            <div class="flex items-center">
-              <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
-              <p class="ml-auto text-base font-medium text-blue-500">Visit <span aria-hidden="true">→</span></p>
-            </div>
-          </div>
-        </router-link>
-        <a href="https://amcham.gy/" class="mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
+        <a href="https://amcham.gy/" class="mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:shadow-md">
           <img class="object-cover object-center aspect-square" src="/amcham.jpg" alt="image of AmCham stage" />
           <div class="p-4">
-            <h2 class="font-medium text-lg text-gray-900">AmCham Guyana Website</h2>
+            <h2 class="font-medium text-lg text-gray-900 dark:text-white">AmCham Guyana Website</h2>
             <h3 class="text-gray-500 mb-2">Wordpress</h3>
             <div class="flex items-center">
               <p class="mr-2 text-sm text-gray-500 dark:text-white">2020 • Company Client</p>
@@ -71,10 +60,21 @@ export default {
             </div>
           </div>
         </a>
-        <a href="#" class="mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg">
+        <router-link to="/gra-calculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:shadow-md">
+          <img class="object-cover object-center aspect-square" src="/empty-wallet.jpg" alt="empty wallet" />
+          <div class="p-4">
+            <h2 class="font-medium text-lg text-gray-900 dark:text-white">Motor Vehicle Import Duty Calculator</h2>
+            <h3 class="text-gray-500 mb-2">VueJS, Tailwind CSS</h3>
+            <div class="flex items-center">
+              <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
+              <p class="ml-auto text-base font-medium text-blue-500">Visit <span aria-hidden="true">→</span></p>
+            </div>
+          </div>
+        </router-link>
+        <a href="#" class="mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:shadow-md">
           <img class="object-cover object-center aspect-square" src="https://picsum.photos/500" alt="" />
           <div class="p-4">
-            <h2 class="font-medium text-lg text-gray-900">More Coming Soon</h2>
+            <h2 class="font-medium text-lg text-gray-900 dark:text-white">More Coming Soon</h2>
             <h3 class="text-gray-500 mb-2">...</h3>
             <div class="flex items-center">
               <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
