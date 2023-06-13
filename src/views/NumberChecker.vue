@@ -40,7 +40,7 @@
       </TransitionChild>
 
       <div class="fixed z-10 inset-0 overflow-y-auto">
-        <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+        <div class="flex items-center sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
           <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" enter-to="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200" leave-from="opacity-100 translate-y-0 sm:scale-100" leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
             <DialogPanel class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
               <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
@@ -143,7 +143,7 @@ export default {
     // 6590000 to 6999999 | Digicel
     // 7010000 to 7019999 | Digicel
     // 7060000 to 7079999 | GTT
-    // 7100000 to 7119999 | ENet
+    // 7100000 to 7139999 | ENet
     // 8880000 to 8889999 | GTT
     checkCarrier(number) {
       if (number >= "6000000" && number <= "6089999") {
@@ -164,7 +164,7 @@ export default {
         this.carrier = "Digicel";
       } else if (number >= "7060000" && number <= "7079999") {
         this.carrier = "GTT";
-      } else if (number >= "7100000" && number <= "7119999") {
+      } else if (number >= "7100000" && number <= "7139999") {
         this.carrier = "ENet";
       } else if (number >= "8880000" && number <= "8889999") {
         this.carrier = "GTT";
