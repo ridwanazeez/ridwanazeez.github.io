@@ -13,10 +13,10 @@ const router = createRouter({
     },
     {
       path: "/gra-calculator",
+      name: "GRACalculator",
       beforeEnter(to, from, next) {
         window.location.href = "https://ridwanazeez.github.io/vehicle-import-calculator/";
       },
-      // name: "GRACalculator",
       // component: () => import("../views/GRACalculator.vue"),
       // meta: {
       // title: "Ridwan Azeez | Vehicle Duty Calculator",
