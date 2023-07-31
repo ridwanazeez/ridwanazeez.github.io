@@ -33,7 +33,7 @@
                     <div class="py-1">
                       <MenuItem v-slot="{ active }">
                         <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200">
-                          <router-link to="/gra-calculator">Vehicle Import Calculator</router-link>
+                          <router-link to="https://ridwanazeez.github.io/vehicle-import-calculator/">Vehicle Import Calculator</router-link>
                         </a>
                       </MenuItem>
                     </div>
@@ -70,7 +70,7 @@
               <div class="py-1">
                 <MenuItem v-slot="{ active }">
                   <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200">
-                    <router-link to="/gra-calculator">Vehicle Import Calculator</router-link>
+                    <router-link to="https://ridwanazeez.github.io/vehicle-import-calculator/">Vehicle Import Calculator</router-link>
                   </a>
                 </MenuItem>
               </div>
