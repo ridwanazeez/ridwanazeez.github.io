@@ -32,8 +32,9 @@
                   <MenuItems class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div class="py-1">
                       <MenuItem v-slot="{ active }">
-                        <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200">
-                          <router-link to="https://ridwanazeez.github.io/vehicle-import-calculator/">Vehicle Import Calculator</router-link>
+                        <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200" href="https://ridwanazeez.github.io/vehicle-import-calculator/">
+                          Vehicle Import Calculator
+                          <!-- <router-link to="/gra-calculator">Vehicle Import Calculator</router-link> -->
                         </a>
                       </MenuItem>
                     </div>
@@ -69,8 +70,9 @@
             <MenuItems class="absolute mt-2 w-100 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div class="py-1">
                 <MenuItem v-slot="{ active }">
-                  <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200">
-                    <router-link to="https://ridwanazeez.github.io/vehicle-import-calculator/">Vehicle Import Calculator</router-link>
+                  <a class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-200" href="https://ridwanazeez.github.io/vehicle-import-calculator/">
+                    Vehicle Import Calculator
+                    <!-- <router-link to="/gra-calculator">Vehicle Import Calculator</router-link> -->
                   </a>
                 </MenuItem>
               </div>
