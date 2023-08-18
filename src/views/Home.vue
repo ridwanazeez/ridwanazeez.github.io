@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <section id="hero" class="flex h-screen bg-blue-50 dark:bg-gray-900">
+  <section id="hero" class="flex sm:h-screen bg-blue-50 dark:bg-gray-900">
     <div class="px-6 lg:px-8 m-auto">
       <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
@@ -26,7 +26,7 @@ export default {
       </div>
     </div>
   </section>
-  <section ref="about-me" class="flex h-screen">
+  <section ref="about-me" class="flex sm:h-screen">
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
         <img class="object-cover object-center rounded-full duration-300 hover:scale-105" alt="image of me" src="/me.jpg" />
@@ -42,7 +42,7 @@ export default {
       </div>
     </div>
   </section>
-  <section ref="projects" class="flex h-screen bg-blue-50 dark:bg-gray-900">
+  <section ref="projects" class="flex sm:h-screen bg-blue-50 dark:bg-gray-900">
     <div class="container px-5 py-24 m-auto">
       <div class="flex flex-col text-center w-full mb-10">
         <h1 class="text-4xl font-bold tracking-tight sm:text-6xl mb-4 text-blue-600">Projects</h1>
@@ -63,7 +63,7 @@ export default {
         <router-link to="/gra-calculator" class="lg:col-start-2 mx-auto transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:shadow-md">
           <img class="object-cover object-center aspect-square" src="/empty-wallet.jpg" alt="empty wallet" />
           <div class="p-4">
-            <h2 class="font-medium text-lg text-gray-900 dark:text-white">Motor Vehicle Import Duty Calculator</h2>
+            <h2 class="font-medium text-lg text-gray-900 dark:text-white">Vehicle Import Taxes Calculator</h2>
             <h3 class="text-gray-500 mb-2">VueJS, Tailwind CSS</h3>
             <div class="flex items-center">
               <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
