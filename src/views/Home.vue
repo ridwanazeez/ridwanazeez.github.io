@@ -63,7 +63,71 @@
       </div>
     </div>
   </section>
-  <section ref="projects" class="flex bg-blue-50 dark:bg-gray-900 sm:h-screen">
+  <section ref="experience" class="flex bg-blue-50 dark:bg-gray-900 sm:h-screen">
+    <div class="container m-auto px-5 py-24">
+      <div class="mb-10 flex w-full flex-col text-center">
+        <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Experience</h1>
+      </div>
+      <div>
+        <ol class="flex justify-center">
+          <li class="border-l-2 border-blue-600">
+            <div class="flex-start md:flex">
+              <div
+                class="-ml-3.5 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600"
+              >
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  class="h-3 w-3 text-white"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm64-192c0-8.8 7.2-16 16-16h288c8.8 0 16 7.2 16 16v64c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-64zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="mb-10 ml-6 block max-w-md rounded-lg bg-gray-100 p-6 shadow-lg">
+                <h2 class="font-bold text-blue-600 transition duration-300 ease-in-out">
+                  National Data Management Authority (NDMA)
+                </h2>
+                <div class="mb-4 flex justify-between">
+                  <p class="font-medium transition duration-300 ease-in-out">
+                    Assistant ICT Engineer
+                  </p>
+                  <p class="font-medium transition duration-300 ease-in-out">
+                    February 2023 - Present
+                  </p>
+                </div>
+                <p class="">
+                  Built Web Applications for government agencies using the low-code development
+                  platform Frappe
+                </p>
+                <!-- <div class="space-x-4">
+                  <button
+                    type="button"
+                    class="inline-block rounded bg-blue-600 px-4 py-1.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg"
+                  >
+                    Preview
+                  </button>
+                  <button
+                    type="button"
+                    class="inline-block rounded border-2 border-blue-600 px-3.5 py-1 text-xs font-medium uppercase leading-tight text-blue-600 transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+                  >
+                    See demo
+                  </button>
+                </div> -->
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section ref="projects" class="flex dark:bg-gray-900 sm:h-screen">
     <div class="container m-auto px-5 py-24">
       <div class="mb-10 flex w-full flex-col text-center">
         <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Projects</h1>
