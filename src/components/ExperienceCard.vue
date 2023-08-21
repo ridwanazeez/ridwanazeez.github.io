@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-startmd:flex">
+  <div class="flex-startmd:flex dark:text-white">
     <div class="-ml-3.5 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -18,14 +18,14 @@
       </svg>
     </div>
     <div
-      class="mb-6 ml-6 block max-w-lg transform rounded-lg bg-white p-6 shadow-lg duration-300 hover:scale-105"
+      class="mb-6 ml-6 block max-w-lg transform rounded-lg bg-white p-6 shadow-lg duration-300 hover:scale-105 dark:bg-gray-800"
     >
-      <h2 class="font-bold text-blue-600 transition duration-300 ease-in-out">
+      <h2 class="font-bold text-blue-600">
         {{ company }}
       </h2>
       <div class="mb-4 flex justify-between">
-        <p class="font-medium transition duration-300 ease-in-out">{{ jobPosition }}</p>
-        <p class="font-medium transition duration-300 ease-in-out">{{ time }}</p>
+        <p class="font-medium">{{ jobPosition }}</p>
+        <p class="font-medium">{{ time }}</p>
       </div>
       <p class="">
         {{ description }}

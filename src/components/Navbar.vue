@@ -1,4 +1,5 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<!-- eslint-disable vue/no-unused-vars -->
 <template>
   <Disclosure v-slot="{ open }" as="nav" class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -25,6 +26,36 @@
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 ><router-link to="/">Home</router-link></a
               >
+              <button
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                @click="scrollToSection('about-me')"
+              >
+                About
+              </button>
+              <button
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                @click="scrollToSection('skills')"
+              >
+                Skills
+              </button>
+              <button
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                @click="scrollToSection('experience')"
+              >
+                Experience
+              </button>
+              <button
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                @click="scrollToSection('education')"
+              >
+                Education
+              </button>
+              <button
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                @click="scrollToSection('projects')"
+              >
+                Projects
+              </button>
               <button
                 class="rounded-md px-2 text-gray-300 hover:bg-gray-700 hover:text-white"
                 @click="toggleDark()"
@@ -82,6 +113,36 @@
         >
           <router-link to="/">Home</router-link>
         </DisclosureButton>
+        <DisclosureButton
+          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          @click="scrollToSection('about-me')"
+        >
+          About
+        </DisclosureButton>
+        <DisclosureButton
+          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          @click="scrollToSection('skills')"
+        >
+          Skills
+        </DisclosureButton>
+        <DisclosureButton
+          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          @click="scrollToSection('experience')"
+        >
+          Experience
+        </DisclosureButton>
+        <DisclosureButton
+          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          @click="scrollToSection('education')"
+        >
+          Education
+        </DisclosureButton>
+        <DisclosureButton
+          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          @click="scrollToSection('projects')"
+        >
+          Projects
+        </DisclosureButton>
         <Menu as="div">
           <div>
             <MenuButton
@@ -124,7 +185,7 @@
   </Disclosure>
 </template>
 
-<script setup>
+<script>
 import {
   Disclosure,
   DisclosureButton,
@@ -140,5 +201,40 @@ import { ChevronDownIcon } from "@heroicons/vue/solid";
 import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
-const toggleDark = useToggle(isDark);
+
+export default {
+  components: {
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+    // eslint-disable-next-line vue/no-reserved-component-names
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
+    MenuIcon,
+    XIcon,
+    MoonIcon,
+    SunIcon,
+    ChevronDownIcon,
+  },
+  data() {
+    return {
+      isDark,
+    };
+  },
+  computed: {
+    toggleDark() {
+      return useToggle(this.isDark);
+    },
+  },
+  methods: {
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+  },
+};
 </script>

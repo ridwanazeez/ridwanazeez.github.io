@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <section id="hero" class="flex bg-blue-50 dark:bg-gray-900 sm:h-screen">
+  <section id="hero" class="flex dark:bg-gray-900 sm:h-screen">
     <div class="m-auto px-6 lg:px-8">
       <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
@@ -19,7 +19,7 @@
             >
             <button
               class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
-              @click="scrollTo('projects')"
+              @click="scrollToSection('projects')"
             >
               Check out my projects <span aria-hidden="true">→</span>
             </button>
@@ -28,13 +28,13 @@
       </div>
     </div>
   </section>
-  <section ref="about-me" class="flex sm:h-screen">
+  <section id="about-me" class="flex sm:h-screen">
     <div class="container mx-auto flex flex-col items-center px-5 py-24 md:flex-row">
       <div class="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
         <img
           class="rounded-full object-cover object-center duration-300 hover:scale-105"
           alt="image of me"
-          src="/me.jpg"
+          src="/images/me.jpg"
         />
       </div>
       <div
@@ -63,7 +63,27 @@
       </div>
     </div>
   </section>
-  <section ref="experience" class="flex bg-blue-50 dark:bg-gray-900 sm:h-screen">
+  <section id="skills" class="flex dark:bg-gray-900 sm:h-screen">
+    <div class="container m-auto px-5 py-24">
+      <div class="mb-10 flex w-full flex-col text-center">
+        <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Skills</h1>
+      </div>
+      <h2 class="mb-8 text-center text-2xl font-medium tracking-tight dark:text-white">
+        Programming
+      </h2>
+      <div
+        class="grid justify-items-center gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
+      >
+        <SkillCard skill="HTML/CSS/JS" description=""></SkillCard>
+        <SkillCard skill="test" description=""></SkillCard>
+        <SkillCard skill="test" description=""></SkillCard>
+        <SkillCard skill="Angular" description=""></SkillCard>
+        <SkillCard skill="Vue JS" description=""></SkillCard>
+        <SkillCard skill="PHP" description=""></SkillCard>
+      </div>
+    </div>
+  </section>
+  <section id="experience" class="flex dark:bg-gray-900 sm:h-screen">
     <div class="container m-auto px-5 py-24">
       <div class="mb-10 flex w-full flex-col text-center">
         <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Experience</h1>
@@ -94,7 +114,26 @@
       </div>
     </div>
   </section>
-  <section ref="projects" class="flex dark:bg-gray-900 sm:h-screen">
+  <section id="education" class="flex dark:bg-gray-900 sm:h-screen">
+    <div class="container m-auto px-5 py-24">
+      <div class="mb-10 flex w-full flex-col text-center">
+        <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Education</h1>
+      </div>
+      <div class="space-y-6">
+        <EducationCard
+          qualification="BSc. Computer Science"
+          institution="The University of Guyana"
+          time="2018 - 2020"
+        ></EducationCard>
+        <EducationCard
+          qualification="ASc. Computer Science"
+          institution="The University of Guyana"
+          time="2016 - 2018"
+        ></EducationCard>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="flex dark:bg-gray-900 sm:h-screen">
     <div class="container m-auto px-5 py-24">
       <div class="mb-10 flex w-full flex-col text-center">
         <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Projects</h1>
@@ -102,14 +141,14 @@
           Here are some things I've worked on
         </p>
       </div>
-      <div class="xs:grid-cols-2 grid justify-items-center gap-4 lg:grid-cols-5">
+      <div class="grid justify-items-center gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <a
           href="https://amcham.gy/"
           class="mx-auto transform overflow-hidden rounded-lg bg-white shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:bg-slate-800 dark:shadow-md"
         >
           <img
             class="aspect-square object-cover object-center"
-            src="/amcham.jpg"
+            src="/images/amcham.jpg"
             alt="image of AmCham stage"
           />
           <div class="p-4">
@@ -129,7 +168,7 @@
         >
           <img
             class="aspect-square object-cover object-center"
-            src="/empty-wallet.jpg"
+            src="/images/empty-wallet.jpg"
             alt="empty wallet"
           />
           <div class="p-4">
@@ -171,17 +210,24 @@
 </template>
 
 <script>
+import EducationCard from "../components/EducationCard.vue";
 import ExperienceCard from "../components/ExperienceCard.vue";
+import SkillCard from "../components/SkillCard.vue";
 export default {
   components: {
     ExperienceCard,
+    EducationCard,
+    SkillCard,
   },
   data() {
     return {};
   },
   methods: {
-    scrollTo(section) {
-      this.$refs[section].scrollIntoView({ behavior: "smooth" });
+    scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
     },
   },
 };

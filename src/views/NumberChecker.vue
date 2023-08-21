@@ -6,7 +6,7 @@
         <a href="https://storyset.com/people" title="People illustrations by Storyset">
           <div
             class="mx-auto w-auto rounded-t-xl bg-cover bg-center [height:250px]"
-            style="background-image: url(/people.svg)"
+            style="background-image: url(/images/people.svg)"
             role="img"
             aria-label="Illustration of people using their cellphones"
           ></div>
