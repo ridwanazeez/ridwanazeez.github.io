@@ -29,7 +29,8 @@
       <div class="flex items-center">
         <p class="mr-2 text-sm text-gray-500 dark:text-white">{{ date }}</p>
         <p v-if="comingSoon" class="ml-auto text-base font-medium text-gray-500">
-          Visit (coming soon) <span aria-hidden="true">→</span>
+          Visit <span aria-hidden="true">→</span><br class="sm:hidden" />
+          (coming soon)
         </p>
         <p v-else class="ml-auto text-base font-medium text-blue-500">
           Visit <span aria-hidden="true">→</span>
