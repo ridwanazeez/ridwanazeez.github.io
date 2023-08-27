@@ -1,30 +1,60 @@
+<!-- eslint-disable vue/no-reserved-component-names -->
 <template>
   <div class="h-full">
-    <div class="h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div class="shadow-xl rounded-xl dark:shadow-lg dark:shadow-blue-700">
+    <div class="flex h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <div class="rounded-xl shadow-xl dark:shadow-lg dark:shadow-blue-700">
         <a href="https://storyset.com/people" title="People illustrations by Storyset">
-          <div class="bg-cover bg-center mx-auto w-auto [height:250px] rounded-t-xl" style="background-image: url(/people.svg)" role="img" aria-label="Illustration of people using their cellphones"></div>
+          <div
+            class="mx-auto w-auto rounded-t-xl bg-cover bg-center [height:250px]"
+            style="background-image: url(/images/people.svg)"
+            role="img"
+            aria-label="Illustration of people using their cellphones"
+          ></div>
         </a>
         <div class="px-10 py-10">
-          <form @submit.prevent="checkForm" class="max-w-md w-full space-y-8">
+          <form class="w-full max-w-md space-y-8" @submit.prevent="checkForm">
             <div>
-              <h2 class="text-center text-3xl font-extrabold text-gray-900 dark:text-white">Cell Number Checker</h2>
-              <p class="text-sm text-center dark:text-white">v1.1.1 | Last updated: 11/06/2023</p>
-              <p class="mt-4 font-medium text-gray-500text-center dark:text-white">Disclaimer: I don't work for any of the telecommunications providers mentioned in this app</p>
+              <h2 class="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+                Cell Number Checker
+              </h2>
+              <p class="text-center text-sm dark:text-white">v1.1.1 | Last updated: 11/06/2023</p>
+              <p class="text-gray-500text-center mt-4 font-medium dark:text-white">
+                Disclaimer: I don't work for any of the telecommunications providers mentioned in
+                this app
+              </p>
               <div v-if="errors.length">
-                <p class="mt-4 font-medium text-red-500 text-center text-2xl">Error!</p>
-                <p class="font-bold dark:text-white" v-for="error in errors">{{ error }}</p>
+                <p class="mt-4 text-center text-2xl font-medium text-red-500">Error!</p>
+                <p v-for="(error, index) in errors" :key="index" class="font-bold dark:text-white">
+                  {{ error }}
+                </p>
               </div>
             </div>
             <div class="mt-4 space-y-6">
               <div class="grid gap-6">
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="number" class="block text-sm font-medium text-gray-700 dark:text-white">Cell Number</label>
-                  <input v-model="number" type="number" name="number" id="number" placeholder="Enter cell phone number" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                  <label
+                    for="number"
+                    class="block text-sm font-medium text-gray-700 dark:text-white"
+                    >Cell Number</label
+                  >
+                  <input
+                    id="number"
+                    v-model="number"
+                    type="number"
+                    name="number"
+                    placeholder="Enter cell phone number"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                  />
                 </div>
               </div>
               <div>
-                <button type="submit" @click="checkNumber" class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 dark:text-white dark:bg-blue-500 dark:hover:bg-blue-700">Check Number</button>
+                <button
+                  type="submit"
+                  class="group relative flex w-full justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 font-medium text-blue-700 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-700"
+                  @click="checkNumber"
+                >
+                  Check Number
+                </button>
               </div>
             </div>
           </form>
@@ -35,28 +65,48 @@
   <!-- Results Modal -->
   <TransitionRoot as="template" :show="(show = show)">
     <Dialog as="div" class="relative z-10" :open="show" @close="show = !show">
-      <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
+      <TransitionChild
+        as="template"
+        enter="ease-out duration-300"
+        enter-from="opacity-0"
+        enter-to="opacity-100"
+        leave="ease-in duration-200"
+        leave-from="opacity-100"
+        leave-to="opacity-0"
+      >
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
       </TransitionChild>
 
-      <div class="fixed z-10 inset-0 overflow-y-auto">
-        <div class="flex items-center justify-center min-h-full p-4 text-center sm:p-0">
-          <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" enter-to="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200" leave-from="opacity-100 translate-y-0 sm:scale-100" leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-            <DialogPanel class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
-              <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+          <TransitionChild
+            as="template"
+            enter="ease-out duration-300"
+            enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            enter-to="opacity-100 translate-y-0 sm:scale-100"
+            leave="ease-in duration-200"
+            leave-from="opacity-100 translate-y-0 sm:scale-100"
+            leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          >
+            <DialogPanel
+              class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+            >
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <div class="sm:flex sm:items-start">
-                  <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <DialogTitle as="h3" class="text-xl font-bold text-gray-900 pb-3">Results </DialogTitle>
+                  <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                    <DialogTitle as="h3" class="pb-3 text-xl font-bold text-gray-900"
+                      >Results
+                    </DialogTitle>
                     <div class="mt-2">
                       <p class="text-sm text-gray-500">{{ number }} is a {{ carrier }} SIM</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button
                   type="button"
-                  class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                   @click="
                     show = !show;
                     reset();
@@ -77,6 +127,14 @@
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from "@headlessui/vue";
 
 export default {
+  components: {
+    // eslint-disable-next-line vue/no-reserved-component-names
+    Dialog,
+    DialogPanel,
+    DialogTitle,
+    TransitionChild,
+    TransitionRoot,
+  },
   data() {
     return {
       number: "",
@@ -84,13 +142,6 @@ export default {
       show: false,
       errors: [],
     };
-  },
-  components: {
-    Dialog,
-    DialogPanel,
-    DialogTitle,
-    TransitionChild,
-    TransitionRoot,
   },
   methods: {
     checkNumber: function (e) {
