@@ -82,7 +82,6 @@
         <SkillCard skill="Adobe Illustrator" description=""></SkillCard>
         <SkillCard skill="Adobe Premiere Pro" description=""></SkillCard>
         <SkillCard skill="Cinema 4D" description=""></SkillCard>
-        <SkillCard skill="Adobe Illustrator" description=""></SkillCard>
       </div>
     </div>
   </section>
