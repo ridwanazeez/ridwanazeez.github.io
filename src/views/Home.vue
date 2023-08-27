@@ -63,23 +63,26 @@
       </div>
     </div>
   </section>
-  <section id="skills" class="flex dark:bg-gray-900 sm:h-screen">
+  <section id="skills" class="flex dark:bg-gray-900">
     <div class="container m-auto px-5 py-24">
       <div class="mb-10 flex w-full flex-col text-center">
         <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Skills</h1>
       </div>
-      <h2 class="mb-8 text-center text-2xl font-medium tracking-tight dark:text-white">
-        Programming
-      </h2>
-      <div
-        class="grid justify-items-center gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
-      >
-        <SkillCard skill="HTML/CSS/JS" description=""></SkillCard>
-        <SkillCard skill="test" description=""></SkillCard>
-        <SkillCard skill="test" description=""></SkillCard>
-        <SkillCard skill="Angular" description=""></SkillCard>
-        <SkillCard skill="Vue JS" description=""></SkillCard>
-        <SkillCard skill="PHP" description=""></SkillCard>
+      <div class="grid justify-items-center gap-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+        <SkillCard skill="HTML/CSS/JS" description="" icon="code"></SkillCard>
+        <SkillCard skill="Angular" description="" icon="code"></SkillCard>
+        <SkillCard skill="Vue JS" description="" icon="code"></SkillCard>
+        <SkillCard skill="PHP" description="" icon="code"></SkillCard>
+        <SkillCard skill="Laravel" description="" icon="code"></SkillCard>
+        <SkillCard skill="Tailwind CSS" description="" icon="code"></SkillCard>
+        <SkillCard skill="Bootstrap" description="" icon="code"></SkillCard>
+        <SkillCard skill="MySQL/MariaDB" description="" icon="code"></SkillCard>
+        <SkillCard skill="VS Code" description="" icon="code"></SkillCard>
+        <SkillCard skill="Adobe Photoshop" description=""></SkillCard>
+        <SkillCard skill="Adobe Illustrator" description=""></SkillCard>
+        <SkillCard skill="Adobe Premiere Pro" description=""></SkillCard>
+        <SkillCard skill="Cinema 4D" description=""></SkillCard>
+        <SkillCard skill="Adobe Illustrator" description=""></SkillCard>
       </div>
     </div>
   </section>
@@ -142,68 +145,33 @@
         </p>
       </div>
       <div class="grid justify-items-center gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <a
-          href="https://amcham.gy/"
-          class="mx-auto transform overflow-hidden rounded-lg bg-white shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:bg-slate-800 dark:shadow-md"
-        >
-          <img
-            class="aspect-square object-cover object-center"
-            src="/images/amcham.jpg"
-            alt="image of AmCham stage"
-          />
-          <div class="p-4">
-            <h2 class="text-lg font-medium text-gray-900 dark:text-white">AmCham Guyana Website</h2>
-            <h3 class="mb-2 text-gray-500">Wordpress</h3>
-            <div class="flex items-center">
-              <p class="mr-2 text-sm text-gray-500 dark:text-white">2020 • Company Client</p>
-              <p class="ml-auto text-base font-medium text-blue-500">
-                Visit <span aria-hidden="true">→</span>
-              </p>
-            </div>
-          </div>
+        <a href="https://amcham.gy/" target="_blank">
+          <ProjectCard
+            :image-u-r-l="'/images/amcham.jpg'"
+            project-title="AmCham Guyana Website"
+            tools="WordPress"
+            date="2020 • Company Client"
+            :alt="'Image of AmCham Stage'"
+          ></ProjectCard>
         </a>
-        <router-link
-          to="/gra-calculator"
-          class="mx-auto transform overflow-hidden rounded-lg bg-white shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:bg-slate-800 dark:shadow-md lg:col-start-2"
-        >
-          <img
-            class="aspect-square object-cover object-center"
-            src="/images/empty-wallet.jpg"
-            alt="empty wallet"
-          />
-          <div class="p-4">
-            <h2 class="text-lg font-medium text-gray-900 dark:text-white">
-              Vehicle Import Taxes Calculator
-            </h2>
-            <h3 class="mb-2 text-gray-500">VueJS, Tailwind CSS</h3>
-            <div class="flex items-center">
-              <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
-              <p class="ml-auto text-base font-medium text-blue-500">
-                Visit <span aria-hidden="true">→</span>
-              </p>
-            </div>
-          </div>
+        <router-link to="/gra-calculator">
+          <ProjectCard
+            :image-u-r-l="'/images/empty-wallet.jpg'"
+            project-title="Vehicle Import Taxes Calculator"
+            tools="VueJS, Tailwind CSS"
+            date="2022 • Personal"
+            :alt="'Image of Empty Wallet'"
+          ></ProjectCard>
         </router-link>
-        <a
-          href="#"
-          class="mx-auto transform overflow-hidden rounded-lg bg-white shadow-2xl duration-300 hover:scale-105 hover:shadow-lg dark:bg-slate-800 dark:shadow-md"
-        >
-          <img
-            class="aspect-square object-cover object-center"
-            src="https://picsum.photos/500"
-            alt=""
-          />
-          <div class="p-4">
-            <h2 class="text-lg font-medium text-gray-900 dark:text-white">More Coming Soon</h2>
-            <h3 class="mb-2 text-gray-500">...</h3>
-            <div class="flex items-center">
-              <p class="mr-2 text-sm text-gray-500 dark:text-white">2022 • Personal</p>
-              <p class="ml-auto text-base font-medium text-blue-500">
-                Visit <span aria-hidden="true">→</span>
-              </p>
-            </div>
-          </div>
-        </a>
+        <ProjectCard
+          :image-u-r-l="'https://placehold.co/500'"
+          project-title="Salary Calculator"
+          tools="VueJS, Tailwind CSS"
+          date="2023 • Personal"
+          :alt="'500px Placeholder Image'"
+          coming-soon="true"
+          hover="false"
+        ></ProjectCard>
       </div>
     </div>
   </section>
@@ -212,12 +180,15 @@
 <script>
 import EducationCard from "../components/EducationCard.vue";
 import ExperienceCard from "../components/ExperienceCard.vue";
+import ProjectCard from "../components/ProjectCard.vue";
 import SkillCard from "../components/SkillCard.vue";
+
 export default {
   components: {
     ExperienceCard,
     EducationCard,
     SkillCard,
+    ProjectCard,
   },
   data() {
     return {};
