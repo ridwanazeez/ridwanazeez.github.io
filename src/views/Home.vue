@@ -138,7 +138,7 @@
   <section id="projects" class="flex dark:bg-gray-900 sm:h-screen">
     <div class="container m-auto px-5 py-24">
       <div class="mb-10 flex w-full flex-col text-center">
-        <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Skills</h1>
+        <h1 class="mb-4 text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">Projects</h1>
         <p class="mx-auto text-base leading-relaxed dark:text-white lg:w-2/3">
           Here are some things I've worked on
         </p>
