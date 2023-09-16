@@ -19,6 +19,14 @@ const router = createRouter({
       },
     },
     {
+      path: "/links",
+      name: "Links",
+      component: () => import("../views/Links.vue"),
+      meta: {
+        title: "Ridwan Azeez | My Links",
+      },
+    },
+    {
       path: "/number-checker",
       name: "NumberChecker",
       component: () => import("../views/NumberChecker.vue"),
