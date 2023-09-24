@@ -35,6 +35,14 @@ const router = createRouter({
       },
     },
     {
+      path: "/cloud-storage-comparison",
+      name: "CloudStorageComparison",
+      component: () => import("../views/CloudStorageComparison.vue"),
+      meta: {
+        title: "Cloud Storage Comparison Table",
+      },
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import("../views/404.vue"),
