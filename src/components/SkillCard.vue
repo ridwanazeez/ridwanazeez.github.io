@@ -1,7 +1,9 @@
 <template>
-  <div class="w-48 rounded-2xl bg-white p-4 py-6 shadow-lg transition duration-300 hover:scale-105">
+  <div
+    class="w-48 rounded-2xl bg-white p-4 py-6 shadow-lg transition duration-300 hover:scale-105 dark:bg-gray-800"
+  >
     <div class="flex flex-col items-center justify-center">
-      <div class="relative h-24 w-24 rounded-full bg-blue-200">
+      <div class="relative h-24 w-24 rounded-full bg-blue-200 dark:bg-blue-700">
         <svg
           v-if="icon == 'code'"
           xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +13,7 @@
           stroke-width="1.5"
           fill="none"
           viewBox="0 0 24 24"
-          class="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform text-blue-700"
+          class="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform text-blue-700 dark:text-blue-200"
         >
           <path
             stroke-linecap="round"
@@ -28,7 +30,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform text-blue-700"
+          class="absolute left-1/2 top-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform text-blue-700 dark:text-blue-200"
         >
           <path
             stroke-linecap="round"
@@ -37,7 +39,9 @@
           />
         </svg>
       </div>
-      <p class="mb-4 mt-4 text-center text-xl font-medium text-gray-800">{{ skill }}</p>
+      <p class="mb-4 mt-4 text-center text-xl font-medium text-gray-800 dark:text-white">
+        {{ skill }}
+      </p>
       <p class="px-2 text-center text-xs text-gray-400">
         {{ description }}
       </p>

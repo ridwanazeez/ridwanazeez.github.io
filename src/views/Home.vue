@@ -78,7 +78,6 @@
         <SkillCard skill="Tailwind CSS" description="" icon="code"></SkillCard>
         <SkillCard skill="Bootstrap" description="" icon="code"></SkillCard>
         <SkillCard skill="MySQL/MariaDB" description="" icon="code"></SkillCard>
-        <SkillCard skill="VS Code" description="" icon="code"></SkillCard>
         <SkillCard skill="Adobe Photoshop" description=""></SkillCard>
         <SkillCard skill="Adobe Illustrator" description=""></SkillCard>
         <SkillCard skill="Adobe Premiere Pro" description=""></SkillCard>
@@ -98,7 +97,7 @@
               company="National Data Management Authority (NDMA)"
               job-position="Assistant ICT Engineer"
               time="February 2023 - Present"
-              description="Built Web Applications for government agencies using the low-code development platform Frappe"
+              description="Built Web Applications for Government Agencies using the low-code development platform <a class='text-blue-600' href='https://frappeframework.com' target='_blank'>Frappe</a>"
             ></ExperienceCard>
             <ExperienceCard
               company="Techlify Inc."

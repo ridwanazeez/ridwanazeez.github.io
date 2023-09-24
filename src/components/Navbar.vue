@@ -81,18 +81,22 @@
                   leave-to-class="transform opacity-0 scale-95"
                 >
                   <MenuItems
-                    class="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    class="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800"
                   >
                     <div class="py-1">
                       <MenuItem v-slot="{ active }">
-                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">
+                        <a
+                          class="light:hover:bg-gray-200 block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                        >
                           <router-link to="/gra-calculator">Vehicle Import Calculator</router-link>
                         </a>
                       </MenuItem>
                     </div>
                     <div class="py-1">
                       <MenuItem v-slot="{ active }">
-                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">
+                        <a
+                          class="light:hover:bg-gray-200 block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                        >
                           <router-link to="/number-checker">Number Checker</router-link>
                         </a>
                       </MenuItem>
@@ -161,18 +165,22 @@
             leave-to-class="transform opacity-0 scale-95"
           >
             <MenuItems
-              class="w-100 absolute mt-2 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              class="w-100 absolute mt-2 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-800"
             >
               <div class="py-1">
                 <MenuItem v-slot="{ active }">
-                  <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">
+                  <a
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                  >
                     <router-link to="/gra-calculator">Vehicle Import Calculator</router-link>
                   </a>
                 </MenuItem>
               </div>
               <div class="py-1">
                 <MenuItem v-slot="{ active }">
-                  <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200">
+                  <a
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                  >
                     <router-link to="/number-checker">Number Checker</router-link>
                   </a>
                 </MenuItem>
