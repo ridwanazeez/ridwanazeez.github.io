@@ -3,7 +3,7 @@
 <template>
   <Disclosure v-slot="{ open }" as="nav" class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div class="relative flex h-16 items-center justify-between">
+      <div class="relative z-10 flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 right-0 flex items-center md:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
@@ -101,6 +101,17 @@
                         </a>
                       </MenuItem>
                     </div>
+                    <div class="py-1">
+                      <MenuItem v-slot="{ active }">
+                        <a
+                          class="light:hover:bg-gray-200 block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                        >
+                          <router-link to="/cloud-storage-comparison"
+                            >Cloud Storage Comparison</router-link
+                          >
+                        </a>
+                      </MenuItem>
+                    </div>
                   </MenuItems>
                 </transition>
               </Menu>
@@ -182,6 +193,17 @@
                     class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
                   >
                     <router-link to="/number-checker">Number Checker</router-link>
+                  </a>
+                </MenuItem>
+              </div>
+              <div class="py-1">
+                <MenuItem v-slot="{ active }">
+                  <a
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                  >
+                    <router-link to="/cloud-storage-comparison"
+                      >Cloud Storage Comparison</router-link
+                    >
                   </a>
                 </MenuItem>
               </div>
