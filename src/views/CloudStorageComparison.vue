@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center py-10">
-    <div class="rounded-md p-10 shadow-xl dark:text-white">
+    <div class="dark:text-white">
       <div class="mb-5 flex w-full flex-row justify-between sm:mb-5">
         <h2 class="text-2xl leading-tight">
           Cloud Storage Providers Comparison
@@ -571,16 +571,11 @@
             </tr>
             <tr class="text-gray-700">
               <td class="dark:border-dark-5 border-b-2 p-4 font-bold dark:text-white">Infinite*</td>
-              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">
-                Contact Sales ¯\_(ツ)_/¯
-              </td>
+              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">*</td>
               <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">-</td>
               <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">-</td>
               <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">$52,800</td>
-              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">
-                Only available for <br />
-                teams of 5+ members
-              </td>
+              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">*</td>
             </tr>
           </tbody>
         </table>
@@ -676,19 +671,18 @@
             </tr>
             <tr class="text-gray-700">
               <td class="dark:border-dark-5 border-b-2 p-4 font-bold dark:text-white">Infinite*</td>
-              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">
-                Contact Sales ¯\_(ツ)_/¯
-              </td>
+              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">*</td>
               <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">-</td>
               <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">-</td>
               <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">$240</td>
-              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">
-                Only available for <br />
-                teams of 5+ members
-              </td>
+              <td class="dark:border-dark-5 border-b-2 p-4 text-center dark:text-white">*</td>
             </tr>
           </tbody>
         </table>
+        <div class="p-4">
+          <p class="text-sm">* Google Workspace: Contact Sales for pricing</p>
+          <p class="text-sm">* OneDrive: Only available for teams of 5+ members</p>
+        </div>
       </div>
     </div>
   </div>
