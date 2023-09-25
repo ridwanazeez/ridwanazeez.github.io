@@ -31,12 +31,15 @@
       <div class="tab mt-4">
         <button
           id="defaultOpen"
-          class="tablinks rounded-t-lg bg-gray-800 p-4"
+          class="tablinks rounded-t-lg bg-gray-800 p-4 transition-opacity"
           @click="openTab(event, 'Individual')"
         >
           Individual
         </button>
-        <button class="tablinks rounded-t-lg bg-gray-700 p-4" @click="openTab(event, 'Business')">
+        <button
+          class="tablinks rounded-t-lg bg-gray-700 p-4 transition-opacity"
+          @click="openTab(event, 'Business')"
+        >
           Business
         </button>
       </div>
