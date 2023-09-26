@@ -212,6 +212,15 @@
                   </a>
                 </MenuItem>
               </div>
+              <div class="py-1">
+                <MenuItem v-slot="{ active }">
+                  <a
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                  >
+                    <router-link to="/guyana-isps-comparison">Guyana ISPs Comparison</router-link>
+                  </a>
+                </MenuItem>
+              </div>
             </MenuItems>
           </transition>
         </Menu>

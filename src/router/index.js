@@ -43,6 +43,14 @@ const router = createRouter({
       },
     },
     {
+      path: "/guyana-isps-compared",
+      name: "ISPComparison",
+      component: () => import("../views/ISPComparison.vue"),
+      meta: {
+        title: "Guyana's ISPs Compared",
+      },
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import("../views/404.vue"),
