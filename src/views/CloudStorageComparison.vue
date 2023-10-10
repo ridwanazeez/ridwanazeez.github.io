@@ -515,37 +515,37 @@
               <tr>
                 <th
                   colspan="8"
-                  class="space-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="space-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Business Pricing (per user), Annually
                 </th>
               </tr>
               <tr>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 ></th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Google Workspace
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Mega
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Mediafire
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Dropbox
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   OneDrive
                 </th>
@@ -553,144 +553,60 @@
             </thead>
             <tbody>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  30GB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $15,840
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">30GB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$15,840</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  1TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $13,200
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">1TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$13,200</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  2TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $31,680
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">2TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$31,680</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  5TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $47,520
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $33,000
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">5TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$47,520</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$33,000</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  15TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $30,000
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">15TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$30,000</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  100TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $35,200
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">100TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$35,200</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  Infinite*
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  *
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $52,800
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  *
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">Infinite*</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">*</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$52,800</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">*</td>
               </tr>
             </tbody>
           </table>
@@ -699,37 +615,37 @@
               <tr>
                 <th
                   colspan="8"
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Business Pricing (per user), Annually
                 </th>
               </tr>
               <tr>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 ></th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Google Workspace
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Mega
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Mediafire
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   Dropbox
                 </th>
                 <th
-                  class="whitespace-nowrap border-b-2 border-white border-white p-4 font-bold text-gray-900 dark:text-white"
+                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
                 >
                   OneDrive
                 </th>
@@ -737,144 +653,60 @@
             </thead>
             <tbody>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  30GB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $72
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">30GB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$72</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  1TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $60
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">1TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$60</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  2TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $144
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">2TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$144</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  5TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $216
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $150
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">5TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$216</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$150</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  15TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $136
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">15TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$136</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  100TB
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $160
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">100TB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$160</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white border-white p-4 font-bold dark:text-white">
-                  Infinite*
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  *
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  $240
-                </td>
-                <td class="border-b-2 border-white border-white p-4 text-center dark:text-white">
-                  *
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">Infinite*</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">*</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">$240</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">*</td>
               </tr>
             </tbody>
           </table>
