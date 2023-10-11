@@ -209,36 +209,45 @@
                 :key="index"
                 class="text-gray-700"
               >
+                <!-- COMPANY COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 font-bold dark:text-white">
                   NexLink<sup>3*</sup>
                 </td>
+                <!-- PLAN COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.plan }}
                 </td>
+                <!-- DOWNLOAD SPEED COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.download }}
                 </td>
+                <!-- UPLOAD SPEED COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.upload }}
                 </td>
+                <!-- MONTHLY COST COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + Math.round(data.cost).toLocaleString() }}
                 </td>
                 <div hidden>
                   {{ (pricePerMbps = data.cost / data.download) }}
                 </div>
+                <!-- PRICE PER MBPS COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + pricePerMbps.toFixed(2).toLocaleString() }}
                 </td>
+                <!-- INSTALL FEE COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + Math.round(data.fee).toLocaleString() }}
                 </td>
                 <div hidden>
                   {{ (totalCost = data.fee + data.cost) }}
                 </div>
+                <!-- TOTAL COST COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + totalCost.toLocaleString() }}
                 </td>
+                <!-- NOTES COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.notes }}
                 </td>
@@ -251,121 +260,47 @@
         <div
           :key="activeTab"
           :class="['tabcontent bg-gray-800', { hidden: activeTab !== 'Business' }]"
-        >
-          <table class="table dark:text-white">
-            <thead>
-              <tr>
-                <th
-                  colspan="8"
-                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
-                >
-                  Business Pricing (per user), Annually
-                </th>
-              </tr>
-              <tr>
-                <th
-                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
-                ></th>
-                <th
-                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
-                >
-                  Google Workspace
-                </th>
-                <th
-                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
-                >
-                  Mega
-                </th>
-                <th
-                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
-                >
-                  Mediafire
-                </th>
-                <th
-                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
-                >
-                  Dropbox
-                </th>
-                <th
-                  class="whitespace-nowrap border-b-2 border-white p-4 font-bold text-gray-900 dark:text-white"
-                >
-                  OneDrive
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:text-white">30GB</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$72</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-              </tr>
-              <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:text-white">1TB</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$60</td>
-              </tr>
-              <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:text-white">2TB</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$144</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-              </tr>
-              <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:text-white">5TB</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$216</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$150</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-              </tr>
-              <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:text-white">15TB</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$136</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-              </tr>
-              <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:text-white">100TB</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$160</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-              </tr>
-              <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:text-white">Infinite*</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">*</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">$240</td>
-                <td class="border-b-2 border-white p-4 text-center dark:text-white">*</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        ></div>
       </transition>
       <div class="p-2">
         <p class="text-sm">
           <sup>1*</sup> Information Sourced from:
-          <a class="text-blue-500" href="" target="_blank">GTT Website</a>
+          <a
+            class="text-blue-500"
+            href="https://web.archive.org/web/20230604195536/https://www.gtt.co.gy/internet"
+            target="_blank"
+            >1</a
+          >,
+          <a
+            class="text-blue-500"
+            href="https://web.archive.org/web/20230604195553/https://www.gtt.co.gy/fibre-voice"
+            target="_blank"
+            >2</a
+          >,
+          <a
+            class="text-blue-500"
+            href="https://web.archive.org/web/20230604200310/https://www.gtt.co.gy/internet/dsl-plans"
+            target="_blank"
+            >3</a
+          >
         </p>
         <p class="text-sm">
           <sup>2*</sup> Information Sourced from:
-          <a class="text-blue-500" href="" target="_blank">ENet Website</a>
+          <a
+            class="text-blue-500"
+            href="https://web.archive.org/web/20230610133114/https://www.enetworks.gy/internet/"
+            target="_blank"
+            >ENet Website</a
+          >
         </p>
         <p class="text-sm">
           <sup>3*</sup> Information Sourced from:
-          <a class="text-blue-500" href="" target="_blank">NexLink Website</a>
+          <a
+            class="text-blue-500"
+            href="https://web.archive.org/web/20231011123425/https://nexlinkonline.com/packages/"
+            target="_blank"
+            >NexLink Website</a
+          >
         </p>
       </div>
     </div>
@@ -411,7 +346,7 @@ export default {
             cost: 10999,
             fee: 20000,
             notes:
-              "bundles internet + landline. comes with 3000 free monthly minutes to select numbers",
+              "Bundles internet + landline. comes with 3000 free monthly minutes to select numbers",
           },
           {
             plan: "Fibre + Voice 200",
@@ -420,7 +355,7 @@ export default {
             cost: 12999,
             fee: 20000,
             notes:
-              "bundles internet + landline. comes with 5000 free monthly minutes to select numbers",
+              "Bundles internet + landline. comes with 5000 free monthly minutes to select numbers",
           },
           {
             plan: "Fibre + Voice 300",
@@ -429,7 +364,7 @@ export default {
             cost: 14999,
             fee: 20000,
             notes:
-              "bundles internet + landline. comes with 10000 free monthly minutes to select numbers",
+              "Bundles internet + landline. comes with 10000 free monthly minutes to select numbers",
           },
         ],
         ENet: [
@@ -453,7 +388,7 @@ export default {
             plan: "OnFiber The Gig",
             download: 1000,
             upload: 500,
-            cost: 13100,
+            cost: 26300,
             fee: 29000,
             notes: "TV & internet bundle, 90 BUSINESS DAYS (~4 months) waiting period for install",
           },
@@ -464,24 +399,24 @@ export default {
             download: 8,
             upload: "unsure",
             cost: 5300,
-            fee: 23500,
-            notes: "Wireless internet. $15,000 install fee + $8,500 for the router",
+            fee: "unsure",
+            notes: "Wireless internet",
           },
           {
-            plan: "Starter +",
+            plan: "Starter+",
             download: 15,
             upload: "unsure",
             cost: 7000,
-            fee: 23500,
-            notes: "Wireless internet. $15,000 install fee + $8,500 for the router",
+            fee: "unsure",
+            notes: "Wireless internet",
           },
           {
             plan: "Extreme",
             download: 25,
             upload: "unsure",
             cost: 10500,
-            fee: 23500,
-            notes: "Wireless internet. $15,000 install fee + $8,500 for the router",
+            fee: "unsure",
+            notes: "Wireless internet",
           },
         ],
       },
