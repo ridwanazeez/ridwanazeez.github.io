@@ -131,36 +131,57 @@
                 :key="index"
                 class="text-gray-700"
               >
+                <!-- COMPANY COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 font-bold dark:text-white">
                   GTT<sup>1*</sup>
                 </td>
+                <!-- PLAN COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.plan }}
                 </td>
+                <!-- DOWNLOAD COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.download }}
                 </td>
+                <!-- UPLOAD COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.upload }}
                 </td>
+                <!-- MONTHLY COST COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + Math.round(data.cost).toLocaleString() }}
                 </td>
                 <div hidden>
                   {{ (pricePerMbps = data.cost / data.download) }}
                 </div>
+                <!-- PRICE PER MBPS COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + pricePerMbps.toFixed(2).toLocaleString() }}
                 </td>
-                <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
+                <!-- INSTALL FEE COLUMN -->
+                <td
+                  v-if="typeof data.fee == 'string'"
+                  class="border-b-2 border-white px-4 py-1 text-center dark:text-white"
+                >
+                  {{ data.fee }}
+                </td>
+                <td v-else class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + Math.round(data.fee).toLocaleString() }}
                 </td>
                 <div hidden>
                   {{ (totalCost = data.fee + data.cost) }}
                 </div>
-                <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
+                <!-- TOTAL COST COLUMN -->
+                <td
+                  v-if="typeof data.fee == 'string'"
+                  class="border-b-2 border-white px-4 py-1 text-center dark:text-white"
+                >
+                  {{ data.fee }}
+                </td>
+                <td v-else class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + totalCost.toLocaleString() }}
                 </td>
+                <!-- NOTES COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.notes }}
                 </td>
@@ -170,36 +191,45 @@
                 :key="index"
                 class="text-gray-700"
               >
+                <!-- COMPANY COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 font-bold dark:text-white">
                   ENet<sup>2*</sup>
                 </td>
+                <!-- PLAN COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.plan }}
                 </td>
+                <!-- DOWNLOAD COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.download }}
                 </td>
+                <!-- UPLOAD COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.upload }}
                 </td>
+                <!-- MONTHLY COST COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + Math.round(data.cost).toLocaleString() }}
                 </td>
                 <div hidden>
                   {{ (pricePerMbps = data.cost / data.download) }}
                 </div>
+                <!-- PRICE PER MBPS COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + pricePerMbps.toFixed(2).toLocaleString() }}
                 </td>
+                <!-- INSTALL FEE COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + Math.round(data.fee).toLocaleString() }}
                 </td>
                 <div hidden>
                   {{ (totalCost = data.fee + data.cost) }}
                 </div>
+                <!-- TOTAL COST COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ "$ " + totalCost.toLocaleString() }}
                 </td>
+                <!-- NOTES COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
                   {{ data.notes }}
                 </td>
@@ -238,14 +268,14 @@
                 </td>
                 <!-- INSTALL FEE COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
-                  {{ "$ " + Math.round(data.fee).toLocaleString() }}
+                  {{ data.fee }}
                 </td>
                 <div hidden>
                   {{ (totalCost = data.fee + data.cost) }}
                 </div>
                 <!-- TOTAL COST COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
-                  {{ "$ " + totalCost.toLocaleString() }}
+                  {{ data.fee }}
                 </td>
                 <!-- NOTES COLUMN -->
                 <td class="border-b-2 border-white px-4 py-1 text-center dark:text-white">
@@ -316,28 +346,20 @@ export default {
       residentialTableData: {
         GTT: [
           {
-            plan: "Fibre 50",
-            download: 100,
-            upload: 20,
-            cost: 8999,
-            fee: 20000,
-            notes: "speeds were quietly increased. not sure if they made an error.",
+            plan: "DSL Silver",
+            download: 5,
+            upload: "unsure",
+            cost: 5699,
+            fee: "unsure",
+            notes: "Optional cost of $ 9,120 for a wireless modem",
           },
           {
-            plan: "Fibre 100",
-            download: 200,
-            upload: 20,
-            cost: 10999,
-            fee: 20000,
-            notes: "speeds were quietly increased. not sure if they made an error.",
-          },
-          {
-            plan: "Fibre 150",
-            download: 300,
-            upload: 20,
-            cost: 12999,
-            fee: 20000,
-            notes: "speeds were quietly increased. not sure if they made an error.",
+            plan: "DSL Gold",
+            download: 10,
+            upload: "unsure",
+            cost: 7999,
+            fee: "unsure",
+            notes: "Optional cost of $ 9,120 for a wireless modem",
           },
           {
             plan: "Fibre + Voice 100",
