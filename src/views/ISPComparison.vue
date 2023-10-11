@@ -653,7 +653,7 @@ export default {
             cost: 13100,
             fee: 29000,
             notes:
-              "TV & internet bundle<br/> <b>90 BUSINESS DAYS (~4 months) waiting period for install</b>",
+              "TV & internet bundle<br/> 90 BUSINESS DAYS (~4 months) waiting period for install",
           },
           {
             plan: "OnFiber The Gig",
@@ -662,7 +662,7 @@ export default {
             cost: 26300,
             fee: 29000,
             notes:
-              "TV & internet bundle<br/> <b>90 BUSINESS DAYS (~4 months) waiting period for install</b>",
+              "TV & internet bundle<br/> 90 BUSINESS DAYS (~4 months) waiting period for install",
           },
         ],
         NexLink: [
