@@ -150,7 +150,7 @@
             project-title="AmCham Guyana Website"
             tools="WordPress"
             date="2020 • Company Client"
-            :alt="'Image of AmCham Stage'"
+            alt="Image of AmCham Stage"
           ></ProjectCard>
         </a>
         <router-link to="/gra-calculator">
@@ -159,7 +159,7 @@
             project-title="Vehicle Import Taxes Calculator"
             tools="VueJS, Tailwind CSS"
             date="2022 • Personal"
-            :alt="'Image of Empty Wallet'"
+            alt="Image of Empty Wallet"
           ></ProjectCard>
         </router-link>
         <router-link to="/salary-calculator">
@@ -168,8 +168,7 @@
             project-title="Salary Calculator"
             tools="VueJS, Tailwind CSS"
             date="2023 • Personal"
-            :alt="'500px Placeholder Image'"
-            hover="false"
+            alt="Stick figure screaming and pulling their hair out"
           ></ProjectCard>
         </router-link>
       </div>
