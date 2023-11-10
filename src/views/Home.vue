@@ -162,15 +162,16 @@
             :alt="'Image of Empty Wallet'"
           ></ProjectCard>
         </router-link>
-        <ProjectCard
-          :image-u-r-l="'https://placehold.co/500'"
-          project-title="Salary Calculator"
-          tools="VueJS, Tailwind CSS"
-          date="2023 • Personal"
-          :alt="'500px Placeholder Image'"
-          coming-soon="true"
-          hover="false"
-        ></ProjectCard>
+        <router-link to="/salary-calculator">
+          <ProjectCard
+            :image-u-r-l="'/images/screaming.webp'"
+            project-title="Salary Calculator"
+            tools="VueJS, Tailwind CSS"
+            date="2023 • Personal"
+            :alt="'500px Placeholder Image'"
+            hover="false"
+          ></ProjectCard>
+        </router-link>
       </div>
     </div>
   </section>
