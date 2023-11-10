@@ -112,30 +112,14 @@
             </thead>
             <tbody>
               <tr class="text-gray-700">
-                <td class="border-b-2 border-white p-4 font-bold dark:border dark:text-white">
-                  2GB
-                </td>
-                <td class="border-b-2 border-white p-4 text-center dark:border dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white p-4 text-center dark:border dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white p-4 text-center dark:border dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white p-4 text-center dark:border dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white p-4 text-center dark:border dark:text-white">
-                  FREE
-                </td>
-                <td class="border-b-2 border-white p-4 text-center dark:border dark:text-white">
-                  -
-                </td>
-                <td class="border-b-2 border-white p-4 text-center dark:border dark:text-white">
-                  -
-                </td>
+                <td class="border-b-2 border-white p-4 font-bold dark:text-white">2GB</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">FREE</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
+                <td class="border-b-2 border-white p-4 text-center dark:text-white">-</td>
               </tr>
               <tr class="text-gray-700">
                 <td class="border-b-2 border-white p-4 font-bold dark:text-white">5GB</td>
