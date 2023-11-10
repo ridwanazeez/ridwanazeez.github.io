@@ -26,36 +26,38 @@
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                 ><router-link to="/">Home</router-link></a
               > -->
-              <button
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                @click="scrollToSection('about-me')"
-              >
-                About
-              </button>
-              <button
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                @click="scrollToSection('skills')"
-              >
-                Skills
-              </button>
-              <button
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                @click="scrollToSection('experience')"
-              >
-                Experience
-              </button>
-              <button
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                @click="scrollToSection('education')"
-              >
-                Education
-              </button>
-              <button
-                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                @click="scrollToSection('projects')"
-              >
-                Projects
-              </button>
+              <div v-if="isHome" class="flex space-x-4">
+                <button
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  @click="scrollToSection('about-me')"
+                >
+                  About
+                </button>
+                <button
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  @click="scrollToSection('skills')"
+                >
+                  Skills
+                </button>
+                <button
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  @click="scrollToSection('experience')"
+                >
+                  Experience
+                </button>
+                <button
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  @click="scrollToSection('education')"
+                >
+                  Education
+                </button>
+                <button
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  @click="scrollToSection('projects')"
+                >
+                  Projects
+                </button>
+              </div>
               <Menu as="div">
                 <div>
                   <MenuButton
@@ -86,6 +88,8 @@
                           >
                         </a>
                       </MenuItem>
+                    </div>
+                    <div class="py-1">
                       <MenuItem v-slot="{ active }">
                         <a
                           class="light:hover:bg-gray-200 block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
@@ -169,36 +173,38 @@
         >
           <router-link to="/">Home</router-link>
         </DisclosureButton> -->
-        <DisclosureButton
-          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          @click="scrollToSection('about-me')"
-        >
-          About
-        </DisclosureButton>
-        <DisclosureButton
-          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          @click="scrollToSection('skills')"
-        >
-          Skills
-        </DisclosureButton>
-        <DisclosureButton
-          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          @click="scrollToSection('experience')"
-        >
-          Experience
-        </DisclosureButton>
-        <DisclosureButton
-          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          @click="scrollToSection('education')"
-        >
-          Education
-        </DisclosureButton>
-        <DisclosureButton
-          class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          @click="scrollToSection('projects')"
-        >
-          Projects
-        </DisclosureButton>
+        <div v-if="isHome" class="space-y-1 px-2 pb-3 pt-2">
+          <DisclosureButton
+            class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            @click="scrollToSection('about-me')"
+          >
+            About
+          </DisclosureButton>
+          <DisclosureButton
+            class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            @click="scrollToSection('skills')"
+          >
+            Skills
+          </DisclosureButton>
+          <DisclosureButton
+            class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            @click="scrollToSection('experience')"
+          >
+            Experience
+          </DisclosureButton>
+          <DisclosureButton
+            class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            @click="scrollToSection('education')"
+          >
+            Education
+          </DisclosureButton>
+          <DisclosureButton
+            class="block w-full rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+            @click="scrollToSection('projects')"
+          >
+            Projects
+          </DisclosureButton>
+        </div>
         <Menu as="div">
           <div>
             <MenuButton
@@ -227,13 +233,6 @@
                     <router-link to="/cloud-storage-comparison"
                       >Cloud Storage Comparison</router-link
                     >
-                  </a>
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
-                  >
-                    <router-link to="/guyana-isps-compared">Guyana's ISPs Compared</router-link>
                   </a>
                 </MenuItem>
               </div>
@@ -340,11 +339,21 @@ export default {
   data() {
     return {
       isDark,
+      isHome: true,
     };
   },
   computed: {
     toggleDark() {
       return useToggle(this.isDark);
+    },
+    currentRoute() {
+      return this.$route.path;
+    },
+  },
+  watch: {
+    currentRoute(newRoute) {
+      // Check if the current route is '/'
+      this.isHome = newRoute === "/";
     },
   },
   methods: {
