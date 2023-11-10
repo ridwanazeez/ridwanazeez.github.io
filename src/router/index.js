@@ -19,6 +19,13 @@ const router = createRouter({
       },
     },
     {
+      path: "/salary-calculator",
+      name: "SalaryCalculator",
+      beforeEnter() {
+        window.location.href = "https://ridwanazeez.github.io/salary-calculator/";
+      },
+    },
+    {
       path: "/links",
       name: "Links",
       component: () => import("../views/Links.vue"),

@@ -144,6 +144,15 @@
                         </a>
                       </MenuItem>
                     </div>
+                    <div class="py-1">
+                      <MenuItem v-slot="{ active }">
+                        <a
+                          class="light:hover:bg-gray-200 block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                        >
+                          <router-link to="/salary-calculator">Salary Calculator</router-link>
+                        </a>
+                      </MenuItem>
+                    </div>
                   </MenuItems>
                 </transition>
               </Menu>
@@ -275,6 +284,15 @@
                     class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
                   >
                     <router-link to="/number-checker">Number Checker</router-link>
+                  </a>
+                </MenuItem>
+              </div>
+              <div class="py-1">
+                <MenuItem v-slot="{ active }">
+                  <a
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                  >
+                    <router-link to="/salary-calculator">Salary Calculator</router-link>
                   </a>
                 </MenuItem>
               </div>
