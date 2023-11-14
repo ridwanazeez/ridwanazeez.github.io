@@ -58,6 +58,14 @@ const router = createRouter({
       },
     },
     {
+      path: "/google-one-payment-guide",
+      name: "GoogleOnePayments",
+      component: () => import("../views/GoogleOnePayments.vue"),
+      meta: {
+        title: "Google One Payment Guide (for Guyana)",
+      },
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "NotFound",
       component: () => import("../views/404.vue"),
