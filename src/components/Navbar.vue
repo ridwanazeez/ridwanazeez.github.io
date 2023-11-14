@@ -100,6 +100,17 @@
                         </a>
                       </MenuItem>
                     </div>
+                    <div class="py-1">
+                      <MenuItem v-slot="{ active }">
+                        <a
+                          class="light:hover:bg-gray-200 block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                        >
+                          <router-link to="/google-one-payment-guide"
+                            >Google One Payment Guide</router-link
+                          >
+                        </a>
+                      </MenuItem>
+                    </div>
                   </MenuItems>
                 </transition>
               </Menu>
@@ -242,6 +253,17 @@
                     class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
                   >
                     <router-link to="/guyana-isps-comparison">Guyana ISPs Comparison</router-link>
+                  </a>
+                </MenuItem>
+              </div>
+              <div class="py-1">
+                <MenuItem v-slot="{ active }">
+                  <a
+                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
+                  >
+                    <router-link to="/google-one-payment-guide"
+                      >Google One Payment Guide</router-link
+                    >
                   </a>
                 </MenuItem>
               </div>
