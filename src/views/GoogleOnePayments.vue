@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
+  <div class="flex items-center justify-center px-8 py-10 sm:px-24 lg:px-48">
     <div class="dark:text-white">
       <div class="mb-5 flex w-full flex-row justify-between sm:mb-5">
         <h2 class="text-2xl leading-tight">
@@ -11,9 +11,9 @@
       <ul class="list-disc">
         <li>You must have a VISA Credit/Debit card that you currently use for online purchases.</li>
         <li>
-          You also need a US address for this to work. If you use an online shipping service such as
-          Zoon, SAC, Freightlink, etc, they will provide you with a US Mailbox address which can be
-          used as your US address.
+          You also need a US address for this to work. If you also use an online shipping service
+          such as Zoon, SAC, Freightlink, etc, they will provide you with a US Mailbox address which
+          can be used as your US address.
         </li>
       </ul>
       <h3 class="mt-5 font-bold">Steps:</h3>
