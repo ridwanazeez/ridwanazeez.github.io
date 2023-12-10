@@ -5,7 +5,7 @@
       <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-56">
         <div class="text-center">
           <h1
-            class="inline-block bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text pb-5 text-4xl font-bold tracking-tight text-transparent sm:text-6xl"
+            class="inline-block bg-gradient-to-r from-sky-500 to-blue-700 bg-clip-text pb-5 text-4xl font-bold tracking-tight text-transparent sm:text-6xl"
           >
             Hello, my name is Ridwan
           </h1>
@@ -13,10 +13,11 @@
             Software Engineer | Graphic Designer
           </p>
           <div class="mt-5 flex items-center justify-center gap-x-6">
-            <router-link
+            <a
+              target="_blank"
+              href="https://github.com/ridwanazeez"
               class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-              to="/links"
-              >Contact Me (pls don't)</router-link
+              >Contact Me (pls don't)</a
             >
             <button
               class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
