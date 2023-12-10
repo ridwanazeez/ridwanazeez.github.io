@@ -14,6 +14,7 @@
           </div>
         </div>
         <div class="grid grid-cols-1 justify-items-center gap-8 lg:grid-cols-3">
+          <!-- SOCIAL MEDIA -->
           <div class="w-full rounded-xl p-8 shadow-2xl">
             <h4 class="text-center text-lg font-medium leading-6 text-gray-900 dark:text-white">
               Social Media
@@ -318,6 +319,180 @@
               </a>
             </ul>
           </div>
+          <!-- GAMERTAGS -->
+          <!-- <div class="w-full rounded-xl p-8 shadow-2xl">
+            <h4 class="text-center text-lg font-medium leading-6 text-gray-900 dark:text-white">
+              Gamertags
+            </h4>
+            <ul class="divide flex flex-col divide-y">
+              <a href="" target="_blank">
+                <li class="flex flex-row">
+                  <div class="flex flex-1 cursor-pointer select-none items-center p-4">
+                    <div class="mr-4 flex h-10 w-10 flex-col items-center justify-center">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Activision</title>
+                        <path
+                          fill="#FFFFFF"
+                          d="M1.88 8.91L0 14.284h.985l.27-.718h1.252l.269.718h.985zm3.224.359l-.537.984h2.15v4.03H7.7v-4.03h1.522l1.882 4.837 1.791-4.837h4.567l-.537-.984H12.18l-1.074 2.865L9.94 9.269zm16.21 1.163v3.762h.986v-1.523l1.7 1.702v-3.76h-.896v1.342zm-15.94.09c-1.075 0-1.881.807-1.881 1.881 0 1.075.806 1.88 1.88 1.88.448 0 .895-.179 1.164-.447L6 12.94c-.18.18-.358.27-.627.27a.897.897 0 0 1-.895-.896c0-.448.358-.896.895-.896.18 0 .448.089.537.268l.627-.715c-.27-.269-.716-.448-1.164-.448zm7.522 0v3.672h.985v-3.671zm2.148 0c-.358 0-.804.18-.804.896 0 .896 1.074 1.433.985 1.792-.09.179-.27.178-.359.178h-.626v.806h1.074c.448 0 .895-.269.895-.806 0-.985-1.253-1.611-.984-1.97 0-.09.178-.09.178-.09h.628v-.805zm1.255 0v3.672h.984v-3.671zm3.045 0c-1.075 0-1.88.807-1.88 1.881 0 .985.805 1.88 1.88 1.88 1.074 0 1.88-.805 1.88-1.88 0-1.074-.806-1.88-1.88-1.88zm-11.016.09v3.672h.986v-3.672zm11.016.896c.448 0 .895.358.895.895a.897.897 0 0 1-.895.896c-.538 0-.985-.358-.896-.896 0-.448.358-.895.896-.895zm-17.464.178l.27.896h-.54z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="mr-auto flex-1 pl-1">
+                      <div class="font-medium dark:text-white">Activision</div>
+                      <div class="text-sm text-gray-600 dark:text-gray-200">@HAXLOL#9888836</div>
+                    </div>
+                    <button class="hidden justify-end text-right md:flex">
+                      <svg
+                        width="20"
+                        fill="currentColor"
+                        height="20"
+                        class="text-gray-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-white"
+                        viewBox="0 0 1792 1792"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+              </a>
+              <a href="" target="_blank">
+                <li class="flex flex-row">
+                  <div class="flex flex-1 cursor-pointer select-none items-center p-4">
+                    <div class="mr-4 flex h-10 w-10 flex-col items-center justify-center">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Battle.net</title>
+                        <path
+                          fill="#4381C3"
+                          d="M18.94 8.296C15.9 6.892 11.534 6 7.426 6.332c.206-1.36.714-2.308 1.548-2.508 1.148-.275 2.4.48 3.594 1.854.782.102 1.71.28 2.355.429C12.747 2.013 9.828-.282 7.607.565c-1.688.644-2.553 2.97-2.448 6.094-2.2.468-3.915 1.3-5.013 2.495-.056.065-.181.227-.137.305.034.058.146-.008.194-.04 1.274-.89 2.904-1.373 5.027-1.676.303 3.333 1.713 7.56 4.055 10.952-1.28.502-2.356.536-2.946-.087-.812-.856-.784-2.318-.19-4.04a26.764 26.764 0 0 1-.807-2.254c-2.459 3.934-2.986 7.61-1.143 9.11 1.402 1.14 3.847.725 6.502-.926 1.505 1.672 3.083 2.74 4.667 3.094.084.015.287.043.332-.034.034-.06-.08-.124-.131-.149-1.408-.657-2.64-1.828-3.964-3.515 2.735-1.929 5.691-5.263 7.457-8.988 1.076.86 1.64 1.773 1.398 2.595-.336 1.131-1.615 1.84-3.403 2.185a27.697 27.697 0 0 1-1.548 1.826c4.634.16 8.08-1.22 8.458-3.565.286-1.786-1.295-3.696-4.053-5.17.696-2.139.832-4.04.346-5.588-.029-.08-.106-.27-.196-.27-.068 0-.067.13-.063.187.135 1.547-.263 3.2-1.062 5.19zm-8.533 9.869c-1.96-3.145-3.09-6.849-3.082-10.594 3.702-.124 7.474.748 10.714 2.627-1.743 3.269-4.385 6.1-7.633 7.966h.001z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="mr-auto flex-1 pl-1">
+                      <div class="font-medium dark:text-white">Battle.net</div>
+                      <div class="text-sm text-gray-600 dark:text-gray-200">@HAXXXLOL#21113</div>
+                    </div>
+                    <button class="hidden justify-end text-right md:flex">
+                      <svg
+                        width="20"
+                        fill="currentColor"
+                        height="20"
+                        class="text-gray-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-white"
+                        viewBox="0 0 1792 1792"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+              </a>
+              <a href="" target="_blank">
+                <li class="flex flex-row">
+                  <div class="flex flex-1 cursor-pointer select-none items-center p-4">
+                    <div class="mr-4 flex h-10 w-10 flex-col items-center justify-center">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Origin</title>
+                        <path
+                          fill="#F56C2D"
+                          d="M12.588 3.11a8.78 8.78 0 013.417.919 8.775 8.775 0 012.706 2.094 9.113 9.113 0 011.715 2.963 8.65 8.65 0 01.465 3.502 8.224 8.224 0 01-.307 1.848 9.174 9.174 0 01-.674 1.703 19.96 19.96 0 01-1.47 2.412 17.61 17.61 0 01-1.762 2.118 18.61 18.61 0 01-4.286 3.281l-.037.026a.196.196 0 01-.109.023.293.293 0 01-.159-.097.266.266 0 01-.062-.173c0-.029.004-.059.012-.085a.186.186 0 01.037-.062c.277-.393.506-.806.686-1.235a5.42 5.42 0 00.368-1.359.118.118 0 00-.038-.085.11.11 0 00-.085-.038 9.155 9.155 0 01-.795.062 4.926 4.926 0 01-.796-.037 8.818 8.818 0 01-6.123-3.013 9.089 9.089 0 01-1.715-2.963 8.662 8.662 0 01-.465-3.502 8.224 8.224 0 01.306-1.848 8.598 8.598 0 01.675-1.68c.439-.864.93-1.676 1.469-2.436a18.035 18.035 0 011.76-2.119A18.801 18.801 0 0111.609.05l.038-.025a.187.187 0 01.11-.025.295.295 0 01.157.098.255.255 0 01.062.174.244.244 0 01-.012.084.164.164 0 01-.036.061 6.447 6.447 0 00-.687 1.237c-.18.433-.3.885-.366 1.358 0 .033.012.063.036.086a.117.117 0 00.085.037c.262-.033.527-.053.795-.06.272-.01.536.002.798.034zm-.807 12.367a3.32 3.32 0 002.521-.855c.72-.64 1.11-1.438 1.176-2.4a3.357 3.357 0 00-.856-2.535 3.294 3.294 0 00-2.4-1.162 3.36 3.36 0 00-2.534.855 3.3 3.3 0 00-1.164 2.4 3.381 3.381 0 00.846 2.535c.628.725 1.432 1.115 2.411 1.162z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="mr-auto flex-1 pl-1">
+                      <div class="font-medium dark:text-white">Origin</div>
+                      <div class="text-sm text-gray-600 dark:text-gray-200">@HAXXXLOL</div>
+                    </div>
+                    <button class="hidden justify-end text-right md:flex">
+                      <svg
+                        width="20"
+                        fill="currentColor"
+                        height="20"
+                        class="text-gray-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-white"
+                        viewBox="0 0 1792 1792"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+              </a>
+              <a href="https://steamcommunity.com/profiles/76561198126544648/" target="_blank">
+                <li class="flex flex-row">
+                  <div class="flex flex-1 cursor-pointer select-none items-center p-4">
+                    <div class="mr-4 flex h-10 w-10 flex-col items-center justify-center">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Steam</title>
+                        <path
+                          fill="#FFFFFF"
+                          d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="mr-auto flex-1 pl-1">
+                      <div class="font-medium dark:text-white">Steam</div>
+                      <div class="text-sm text-gray-600 dark:text-gray-200">@HAXLOL</div>
+                    </div>
+                    <button class="hidden justify-end text-right md:flex">
+                      <svg
+                        width="20"
+                        fill="currentColor"
+                        height="20"
+                        class="text-gray-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-white"
+                        viewBox="0 0 1792 1792"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+              </a>
+              <a href="" target="_blank">
+                <li class="flex flex-row">
+                  <div class="flex flex-1 cursor-pointer select-none items-center p-4">
+                    <div class="mr-4 flex h-10 w-10 flex-col items-center justify-center">
+                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Ubisoft</title>
+                        <path
+                          fill="#FFFFFF"
+                          d="M23.561 11.988C23.301-.304 6.954-4.89.656 6.634c.282.206.661.477.943.672a11.747 11.747 0 00-.976 3.067 11.885 11.885 0 00-.184 2.071C.439 18.818 5.621 24 12.005 24c6.385 0 11.556-5.17 11.556-11.556v-.455zm-20.27 2.06c-.152 1.246-.054 1.636-.054 1.788l-.282.098c-.108-.206-.37-.932-.488-1.908C2.163 10.308 4.7 6.96 8.57 6.33c3.544-.52 6.937 1.68 7.728 4.758l-.282.098c-.087-.087-.228-.336-.77-.878-4.281-4.281-11.002-2.32-11.956 3.74zm11.002 2.081a3.145 3.145 0 01-2.59 1.355 3.15 3.15 0 01-3.155-3.155 3.159 3.159 0 012.927-3.144c1.018-.043 1.972.51 2.416 1.398a2.58 2.58 0 01-.455 2.95c.293.205.575.4.856.595zm6.58.12c-1.669 3.782-5.106 5.766-8.77 5.712-7.034-.347-9.083-8.466-4.38-11.393l.207.206c-.076.108-.358.325-.791 1.182-.51 1.041-.672 2.081-.607 2.732.369 5.67 8.314 6.83 11.045 1.214C21.057 8.217 11.822.401 3.626 6.374l-.184-.184C5.599 2.808 9.816 1.3 13.837 2.309c6.147 1.55 9.453 7.956 7.035 13.94z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="mr-auto flex-1 pl-1">
+                      <div class="font-medium dark:text-white">Ubisoft/Uplay</div>
+                      <div class="text-sm text-gray-600 dark:text-gray-200">@HAXXXLOL</div>
+                    </div>
+                    <button class="hidden justify-end text-right md:flex">
+                      <svg
+                        width="20"
+                        fill="currentColor"
+                        height="20"
+                        class="text-gray-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-white"
+                        viewBox="0 0 1792 1792"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </li>
+              </a>
+            </ul>
+          </div> -->
+          <!-- MISC -->
           <div class="w-full rounded-xl p-8 shadow-2xl">
             <h4 class="text-center text-lg font-medium leading-6 text-gray-900 dark:text-white">
               Misc
@@ -457,6 +632,7 @@
               </a>
             </ul>
           </div>
+          <!-- ALTER EGOS -->
           <div class="w-full rounded-xl p-8 shadow-2xl">
             <h4 class="text-center text-lg font-medium leading-6 text-gray-900 dark:text-white">
               Alter Egos
