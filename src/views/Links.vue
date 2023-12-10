@@ -651,7 +651,7 @@
                       </svg>
                     </div>
                     <div class="mr-auto flex-1 pl-1">
-                      <div class="font-medium dark:text-white">Instagram</div>
+                      <div class="font-medium dark:text-white">Instagram (Depressing Quotes)</div>
                       <div class="text-sm text-gray-600 dark:text-gray-200">?????????????</div>
                     </div>
                     <button class="hidden justify-end text-right md:flex">
