@@ -320,7 +320,7 @@
             </ul>
           </div>
           <!-- GAMERTAGS -->
-          <!-- <div class="w-full rounded-xl p-8 shadow-2xl">
+          <div hidden class="hidden w-full rounded-xl p-8 shadow-2xl">
             <h4 class="text-center text-lg font-medium leading-6 text-gray-900 dark:text-white">
               Gamertags
             </h4>
@@ -491,7 +491,7 @@
                 </li>
               </a>
             </ul>
-          </div> -->
+          </div>
           <!-- MISC -->
           <div class="w-full rounded-xl p-8 shadow-2xl">
             <h4 class="text-center text-lg font-medium leading-6 text-gray-900 dark:text-white">
