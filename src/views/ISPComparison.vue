@@ -642,7 +642,7 @@ export default {
             upload: "unsure",
             cost: 6999,
             fee: 0,
-            notes: "Wireless internet | 250GB Data cap | 500 Minutes for local calls",
+            notes: "Wireless internet | 250GB data cap | 500 Minutes for local calls",
           },
           {
             plan: "Fastr 10",
@@ -650,7 +650,7 @@ export default {
             upload: "unsure",
             cost: 8999,
             fee: 0,
-            notes: "Wireless internet | 350GB Data cap | 2000 Minutes for local calls",
+            notes: "Wireless internet | 350GB data cap | 2000 Minutes for local calls",
           },
           {
             plan: "Fastr 10+",
@@ -658,7 +658,7 @@ export default {
             upload: "unsure",
             cost: 9999,
             fee: 0,
-            notes: "Wireless internet | 500GB Data cap | 3000 Minutes for local calls",
+            notes: "Wireless internet | 500GB data cap | 3000 Minutes for local calls",
           },
         ],
         ENet: [
@@ -668,7 +668,7 @@ export default {
             upload: 2,
             cost: 7900,
             fee: 29000,
-            notes: "Wireless internet | 1TB monthly data cap | Bundled with TV",
+            notes: "Wireless internet | 1TB data cap | Bundled with TV",
           },
           {
             plan: "OnFiber",
