@@ -5,7 +5,7 @@
       <div class="mb-5 flex w-full flex-row justify-between sm:mb-5">
         <h2 class="text-2xl leading-tight">
           Guyana's ISPs Compared
-          <p class="mt-1 text-sm">Last Updated: 11/10/2023</p>
+          <p class="mt-1 text-sm">Last Updated: 25/12/2023</p>
         </h2>
       </div>
       <div class="tab mt-4">
@@ -527,19 +527,19 @@
           <sup>1*</sup> Information Sourced from:
           <a
             class="text-blue-500"
-            href="https://web.archive.org/web/20230604195536/https://www.gtt.co.gy/internet"
+            href="https://web.archive.org/web/20231225122059/https://www.gtt.co.gy/en/dsl"
             target="_blank"
             >1</a
           >,
           <a
             class="text-blue-500"
-            href="https://web.archive.org/web/20230604195553/https://www.gtt.co.gy/fibre-voice"
+            href="https://web.archive.org/web/20231225121212/https://www.gtt.co.gy/en/fibre"
             target="_blank"
             >2</a
           >,
           <a
             class="text-blue-500"
-            href="https://web.archive.org/web/20230604200310/https://www.gtt.co.gy/internet/dsl-plans"
+            href="https://web.archive.org/web/20231225122227/https://www.gtt.co.gy/en/wireless"
             target="_blank"
             >3</a
           >
@@ -548,7 +548,7 @@
           <sup>1*</sup> Information Sourced from:
           <a
             class="text-blue-500"
-            href="https://web.archive.org/web/20231011151719/https://www.gtt.co.gy/connex"
+            href="https://web.archive.org/web/20231225133437/https://www.gtt.co.gy/en/business/connex"
             target="_blank"
             >GTT Connex</a
           >
@@ -610,31 +610,55 @@ export default {
             notes: "Optional cost of $ 9,120 for a wireless modem",
           },
           {
-            plan: "Fibre + Voice 100",
+            plan: "Fibre 100+",
             download: 100,
-            upload: 20,
+            upload: 15,
             cost: 10999,
-            fee: 20000,
+            fee: 0,
             notes:
               "Bundles internet + landline<br/> Comes with 3000 free monthly minutes to GTT landlines",
           },
           {
-            plan: "Fibre + Voice 200",
+            plan: "Fibre 200+",
             download: 200,
             upload: 20,
             cost: 12999,
-            fee: 20000,
+            fee: 0,
             notes:
               "Bundles internet + landline<br/> Comes with 5000 free monthly minutes to GTT landlines",
           },
           {
-            plan: "Fibre + Voice 300",
+            plan: "Fibre 300+",
             download: 300,
-            upload: 20,
+            upload: 25,
             cost: 14999,
-            fee: 20000,
+            fee: 0,
             notes:
-              "Bundles internet + landline<br/> Comes with 10000 free monthly minutes to GTT landlines",
+              "Bundles internet + landline<br/> Unlimited free monthly minutes to GTT landlines<br/> 200 Minutes to international numbers (USA, Canada, English Caribbean countries)",
+          },
+          {
+            plan: "Fastr 5",
+            download: 5,
+            upload: "unsure",
+            cost: 6999,
+            fee: 0,
+            notes: "Wireless internet | 250GB Data cap | 500 Minutes for local calls",
+          },
+          {
+            plan: "Fastr 10",
+            download: 10,
+            upload: "unsure",
+            cost: 8999,
+            fee: 0,
+            notes: "Wireless internet | 350GB Data cap | 2000 Minutes for local calls",
+          },
+          {
+            plan: "Fastr 10+",
+            download: 10,
+            upload: "unsure",
+            cost: 9999,
+            fee: 0,
+            notes: "Wireless internet | 500GB Data cap | 3000 Minutes for local calls",
           },
         ],
         ENet: [
@@ -717,6 +741,14 @@ export default {
             cost: 37999,
             fee: 22800,
             notes: "6000 Minutes On Net+ Calls to USA & Canada",
+          },
+          {
+            plan: "Connex 1G",
+            download: 1024,
+            upload: 500,
+            cost: 80000,
+            fee: 22800,
+            notes: "Unlimited minutes to GTT numbers and calls to USA & Canada",
           },
         ],
         ENet: [
