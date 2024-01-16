@@ -634,6 +634,15 @@ export default {
             cost: 14999,
             fee: 0,
             notes:
+              "Bundles internet + landline<br/> Comes with 10000 free monthly minutes to GTT landlines",
+          },
+          {
+            plan: "Fibre 600+",
+            download: 600,
+            upload: 300,
+            cost: 19999,
+            fee: 0,
+            notes:
               "Bundles internet + landline<br/> Unlimited free monthly minutes to GTT landlines<br/> 200 Minutes to international numbers (USA, Canada, English Caribbean countries)",
           },
           {
