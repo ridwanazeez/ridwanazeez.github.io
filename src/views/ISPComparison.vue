@@ -5,7 +5,7 @@
       <div class="mb-5 flex w-full flex-row justify-between sm:mb-5">
         <h2 class="text-2xl leading-tight">
           Guyana's ISPs Compared
-          <p class="mt-1 text-sm">Last Updated: 25/12/2023</p>
+          <p class="mt-1 text-sm">Last Updated: 16/01/2023</p>
         </h2>
       </div>
       <div class="tab mt-4">
