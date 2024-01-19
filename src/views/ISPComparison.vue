@@ -5,7 +5,7 @@
       <div class="mb-5 flex w-full flex-row justify-between sm:mb-5">
         <h2 class="text-2xl leading-tight">
           Guyana's ISPs Compared
-          <p class="mt-1 text-sm">Last Updated: 25/12/2023</p>
+          <p class="mt-1 text-sm">Last Updated: 16/01/2023</p>
         </h2>
       </div>
       <div class="tab mt-4">
@@ -632,6 +632,15 @@ export default {
             download: 300,
             upload: 25,
             cost: 14999,
+            fee: 0,
+            notes:
+              "Bundles internet + landline<br/> Comes with 10000 free monthly minutes to GTT landlines",
+          },
+          {
+            plan: "Fibre 600+",
+            download: 600,
+            upload: 300,
+            cost: 19999,
             fee: 0,
             notes:
               "Bundles internet + landline<br/> Unlimited free monthly minutes to GTT landlines<br/> 200 Minutes to international numbers (USA, Canada, English Caribbean countries)",
