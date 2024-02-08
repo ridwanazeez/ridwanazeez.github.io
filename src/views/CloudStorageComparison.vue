@@ -714,6 +714,40 @@ export default {
       activeTab: "Individual",
     };
   },
+  head: {
+    title: "Cloud Storage Comparison",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Explore the best cloud storage options with our comprehensive comparison guide. Find the perfect solution for your needs. Cloud Storage Comparison made easy",
+      },
+      {
+        property: "og:title",
+        content: "Cloud Storage Comparison",
+      },
+      {
+        property: "og:description",
+        content:
+          "Explore the best cloud storage options with our comprehensive comparison guide. Find the perfect solution for your needs. Cloud Storage Comparison made easy",
+      },
+      {
+        property: "twitter:title",
+        content: "Cloud Storage Comparison",
+      },
+      {
+        property: "twitter:description",
+        content:
+          "Explore the best cloud storage options with our comprehensive comparison guide. Find the perfect solution for your needs. Cloud Storage Comparison made easy",
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: window.location.href,
+      },
+    ],
+  },
   mounted() {
     document.getElementById("defaultOpen").click();
   },

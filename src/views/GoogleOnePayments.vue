@@ -115,6 +115,40 @@ export default {
   data() {
     return {};
   },
+  head: {
+    title: "Google One Payment Guide (for Guyana)",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Discover the easy steps for Google One payments in Guyana. Our guide ensures a seamless payment process. Follow our instructions for hassle-free transactions.",
+      },
+      {
+        property: "og:title",
+        content: "Google One Payment Guide (for Guyana)",
+      },
+      {
+        property: "og:description",
+        content:
+          "Discover the easy steps for Google One payments in Guyana. Our guide ensures a seamless payment process. Follow our instructions for hassle-free transactions.",
+      },
+      {
+        property: "twitter:title",
+        content: "Google One Payment Guide (for Guyana)",
+      },
+      {
+        property: "twitter:description",
+        content:
+          "Discover the easy steps for Google One payments in Guyana. Our guide ensures a seamless payment process. Follow our instructions for hassle-free transactions.",
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: window.location.href,
+      },
+    ],
+  },
   mounted() {},
   methods: {},
 };

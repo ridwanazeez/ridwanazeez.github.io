@@ -590,6 +590,7 @@ export default {
   components: {},
   data() {
     return {
+      currentPageUrl: "",
       activeTab: "Residential",
       residentialTableData: {
         GTT: [
@@ -838,6 +839,40 @@ export default {
         ],
       },
     };
+  },
+  head: {
+    title: "Guyana's ISPs Compared",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Explore the best internet service providers (ISPs) in Guyana. Read our comprehensive comparison to make an informed choice. Guyana's ISPs compared for cost and speed.",
+      },
+      {
+        property: "og:title",
+        content: "Guyana's ISPs Compared",
+      },
+      {
+        property: "og:description",
+        content:
+          "Explore the best internet service providers (ISPs) in Guyana. Read our comprehensive comparison to make an informed choice. Guyana's ISPs compared for cost and speed.",
+      },
+      {
+        property: "twitter:title",
+        content: "Guyana's ISPs Compared",
+      },
+      {
+        property: "twitter:description",
+        content:
+          "Explore the best internet service providers (ISPs) in Guyana. Read our comprehensive comparison to make an informed choice. Guyana's ISPs compared for cost and speed.",
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: window.location.href,
+      },
+    ],
   },
   mounted() {
     document.getElementById("defaultOpen").click();
