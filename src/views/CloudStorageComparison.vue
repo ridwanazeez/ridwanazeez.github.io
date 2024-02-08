@@ -740,6 +740,10 @@ export default {
         content:
           "Explore the best cloud storage options with our comprehensive comparison guide. Find the perfect solution for your needs. Cloud Storage Comparison made easy",
       },
+      {
+        name: "keywords",
+        content: "Cloud Storage Guyana",
+      },
     ],
     link: [
       {

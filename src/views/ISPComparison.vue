@@ -866,6 +866,10 @@ export default {
         content:
           "Explore the best internet service providers (ISPs) in Guyana. Read our comprehensive comparison to make an informed choice. Guyana's ISPs compared for cost and speed.",
       },
+      {
+        name: "keywords",
+        content: "Guyana ISPs Compared",
+      },
     ],
     link: [
       {

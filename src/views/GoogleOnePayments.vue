@@ -141,6 +141,10 @@ export default {
         content:
           "Discover the easy steps for Google One payments in Guyana. Our guide ensures a seamless payment process. Follow our instructions for hassle-free transactions.",
       },
+      {
+        name: "keywords",
+        content: "Google One Guyana",
+      },
     ],
     link: [
       {
