@@ -719,5 +719,36 @@ export default {
   data() {
     return {};
   },
+  head: {
+    title: "Ridwan Azeez | My Links",
+    meta: [
+      {
+        name: "description",
+        content: "My (Too Many) Online Accounts",
+      },
+      {
+        property: "og:title",
+        content: "Ridwan Azeez | My Links",
+      },
+      {
+        property: "og:description",
+        content: "My (Too Many) Online Accounts",
+      },
+      {
+        property: "twitter:title",
+        content: "Ridwan Azeez | My Links",
+      },
+      {
+        property: "twitter:description",
+        content: "My (Too Many) Online Accounts",
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: window.location.href,
+      },
+    ],
+  },
 };
 </script>
