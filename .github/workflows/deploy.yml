@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Server
 
 on:
   push:
@@ -38,10 +38,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     if: github.ref == 'refs/heads/master'
 
     steps:
@@ -51,8 +47,10 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Copy files via SCP
+        run: scp -r ./dist/* yzgcytmy@162.241.24.59:~/public_html/website_763f228f
