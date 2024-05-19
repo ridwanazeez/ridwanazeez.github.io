@@ -22,54 +22,49 @@ const router = createRouter({
       path: "/gra-calculator",
       name: "GRACalculator",
       beforeEnter() {
-        window.location.href = "https://ridwanazeez.github.io/vehicle-import-calculator/";
+        window.location.href = "https://ridwanazeez.com/vehicle-import-calculator/";
       },
     },
     {
       path: "/salary-calculator",
       name: "SalaryCalculator",
       beforeEnter() {
-        window.location.href = "https://ridwanazeez.github.io/salary-calculator/";
+        window.location.href = "https://ridwanazeez.com/salary-calculator/";
       },
     },
     {
       path: "/links",
       name: "Links",
-      component: () => import("../views/Links.vue"),
-      meta: {
-        title: "Ridwan Azeez | My Links",
+      beforeEnter() {
+        window.location.href = "https://ridwanazeez.com/links/";
       },
     },
     {
       path: "/number-checker",
       name: "NumberChecker",
-      component: () => import("../views/NumberChecker.vue"),
-      meta: {
-        title: "Ridwan Azeez | Cell Number Checker",
+      beforeEnter() {
+        window.location.href = "https://ridwanazeez.com/number-checker/";
       },
     },
     {
       path: "/cloud-storage-comparison",
       name: "CloudStorageComparison",
-      component: () => import("../views/CloudStorageComparison.vue"),
-      meta: {
-        title: "Cloud Storage Comparison Table",
+      beforeEnter() {
+        window.location.href = "https://ridwanazeez.com/cloud-storage-comparison/";
       },
     },
     {
       path: "/guyana-isps-compared",
       name: "ISPComparison",
-      component: () => import("../views/ISPComparison.vue"),
-      meta: {
-        title: "Guyana's ISPs Compared",
+      beforeEnter() {
+        window.location.href = "https://ridwanazeez.com/guyana-isps-compared/";
       },
     },
     {
       path: "/google-one-payment-guide",
       name: "GoogleOnePayments",
-      component: () => import("../views/GoogleOnePayments.vue"),
-      meta: {
-        title: "Google One Payment Guide (for Guyana)",
+      beforeEnter() {
+        window.location.href = "https://ridwanazeez.com/google-one-payment-guide/";
       },
     },
     {
