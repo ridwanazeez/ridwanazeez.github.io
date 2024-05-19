@@ -26,6 +26,13 @@ const router = createRouter({
       },
     },
     {
+      path: "/vehicle-import-calculator",
+      name: "GRACalculator",
+      beforeEnter() {
+        window.location.href = "https://ridwanazeez.com/vehicle-import-calculator/";
+      },
+    },
+    {
       path: "/salary-calculator",
       name: "SalaryCalculator",
       beforeEnter() {
