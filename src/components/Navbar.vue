@@ -146,7 +146,9 @@
                         <a
                           class="light:hover:bg-gray-200 block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
                         >
-                          <router-link to="/gra-calculator">Vehicle Import Calculator</router-link>
+                          <router-link to="/vehicle-import-calculator"
+                            >Vehicle Import Calculator</router-link
+                          >
                         </a>
                       </MenuItem>
                     </div>
@@ -295,7 +297,9 @@
                   <a
                     class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:dark:bg-gray-700 hover:dark:text-white"
                   >
-                    <router-link to="/gra-calculator">Vehicle Import Calculator</router-link>
+                    <router-link to="/vehicle-import-calculator"
+                      >Vehicle Import Calculator</router-link
+                    >
                   </a>
                 </MenuItem>
               </div>
