@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      var newURL = "https://ridwanazeez.com" + window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace(newURL);
+    </script>
+  </head>
+  <body>
+    <p>
+      If you are not redirected automatically, follow this
+      <a id="redirectLink" href="#">link to the new site</a>.
+    </p>
+    <script type="text/javascript">
+      document.getElementById("redirectLink").href = newURL;
+    </script>
+  </body>
+</html>
